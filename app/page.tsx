@@ -1,113 +1,364 @@
+"use client";
+
 import Image from "next/image";
+import Lottie from "lottie-react"; // Import the Lottie component
+
+import camelBg from "../public/assets/camelbg.jpg";
+import { useEffect, useState } from "react";
+import IconHeading from "@/components/IconHeading";
+import TableComponent from "@/components/table";
+import WifiGreen from "@/components/svg/wifiGreen.svg";
+import WifiOflline from "@/components/svg/wifiOfline.svg";
+import LatestValidatedLottie from "@/components/lottie/wired-lineal-1020-rules-book-guideline.json";
+import LedgerCard from "@/components/ledgerCard";
+import clusterTitleLottie from "@/components/lottie/wired-flat-1309-load-balancer_1.json";
+
+import sirenLottie from "@/components/lottie/wired-lineal-2096-siren.json";
+
+import ledgerIndexLottie from "@/components/svg/system-regular-76-newspaper.svg";
+import ledgerIntervalLottie from "@/components/svg/system-regular-162-update.svg";
+import closingTimeLottie from "@/components/svg/system-regular-67-clock.svg";
+import TPSLottie from "@/components/svg/system-regular-33-speed.svg";
+import TransactionLottie from "@/components/svg/system-regular-35-compare.svg";
+import quorumLottie from "@/components/svg/system-regular-96-groups.svg";
+import proposersLottie from "@/components/svg/system-regular-156-thumbs-up-down.svg";
+
+import offlineAnimationData from "@/components/lottie/wired-flat-64-wifi-offline.json";
+import onlineAnimationData from "@/components/lottie/wired-flat-64-wifi-online.json";
+import statisticsTitleLottie from "@/components/lottie/wired-flat-1307-hub-network.json";
 
 export default function Home() {
+  const [aspectRatio, setAspectRatio] = useState(16 / 9);
+  console.log("🚀 ~ Home ~ aspectRatio:", aspectRatio);
+
+  const column = [
+    "Node",
+    "Pubkey",
+    "Ledge",
+    "Index Uptime",
+    "Version",
+    "Peers",
+    "Status",
+  ];
+
+  const data = [
+    [
+      "Node 1",
+      "n94Lo4MBCNHWzDnLY9XuLdFrJPtWoiXYf6eZy8V2xmXLBgJsivAk",
+      "85447351",
+      "47894",
+      "2.0.0",
+      "2.0.0",
+      <Lottie
+        animationData={offlineAnimationData}
+        loop={true}
+        autoplay={true}
+        style={{ width: 30, height: 30, margin: "0 auto" }}
+      />,
+    ],
+    [
+      "Node 1",
+      "n94Lo4MBCNHWzDnLY9XuLdFrJPtWoiXYf6eZy8V2xmXLBgJsivAk",
+      "85447351",
+      "47894222222222",
+      "2.0.0",
+      "2.0.0",
+      <Lottie
+        animationData={onlineAnimationData}
+        loop={true}
+        autoplay={true}
+        style={{ width: 30, height: 30, margin: "0 auto" }}
+      />,
+    ],
+    [
+      "Node 1",
+      "n94Lo4MBCNHWzDnLY9XuLdFrJPtWoiXYf6eZy8V2xmXLBgJsivAk",
+      "85447351",
+      "47894",
+      "2.0.0",
+      "2.0.0",
+      <Lottie
+        animationData={offlineAnimationData}
+        loop={true}
+        autoplay={true}
+        style={{ width: 30, height: 30, margin: "0 auto" }}
+      />,
+    ],
+    [
+      "Node 1",
+      "n94Lo4MBCNHWzDnLY9XuLdFrJPtWoiXYf6eZy8V2xmXLBgJsivAk",
+      "85447351",
+      "47894",
+      "2.0.0",
+      "2.0.0",
+      <Lottie
+        animationData={onlineAnimationData}
+        loop={true}
+        autoplay={true}
+        style={{ width: 30, height: 30, margin: "0 auto" }}
+      />,
+    ],
+  ];
+
+  const validatedLedger = ["Ledger", "Σ(Tx)", "XRP Burned", "Time", "Hash"];
+
+  const ledgerData = [
+    [
+      <span className="text-[#CDD004]">85448464</span>,
+      "142",
+      <span className="text-[#FF4A00]">-0.010099 XRP</span>,
+      "1 seconds ago",
+      "90C595A79B2F9A0DEABE519852A4AFC30790107CD7F6D51149A6EA03CE69315D",
+    ],
+    [
+      <span className="text-[#CDD004]">85448464</span>,
+      "142",
+      <span className="text-[#FF4A00]">-0.010099 XRP</span>,
+      "1 seconds ago",
+      "90C595A79B2F9A0DEABE519852A4AFC30790107CD7F6D51149A6EA03CE69315D",
+    ],
+    [
+      <span className="text-[#CDD004]">85448464</span>,
+      "142",
+      <span className="text-[#FF4A00]">-0.010099 XRP</span>,
+      "1 seconds ago",
+      "90C595A79B2F9A0DEABE519852A4AFC30790107CD7F6D51149A6EA03CE69315D",
+    ],
+    [
+      <span className="text-[#CDD004]">85448464</span>,
+      "142",
+      <span className="text-[#FF4A00]">-0.010099 XRP</span>,
+      "1 seconds ago",
+      "90C595A79B2F9A0DEABE519852A4AFC30790107CD7F6D51149A6EA03CE69315D",
+    ],
+  ];
+
+  const lastdayData = [
+    [
+      "14:31",
+      <span className="text-[#CDD004]">
+        37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
+      </span>,
+      "223.1M XRP",
+      "US$114.5M",
+    ],
+    [
+      "14:31",
+      <span className="text-[#CDD004]">
+        37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
+      </span>,
+      "223.1M XRP",
+      "US$114.5M",
+    ],
+    [
+      "14:31",
+      <span className="text-[#CDD004]">
+        37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
+      </span>,
+      "223.1M XRP",
+      "US$114.5M",
+    ],
+    [
+      "14:31",
+      <span className="text-[#CDD004]">
+        37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
+      </span>,
+      "223.1M XRP",
+      "US$114.5M",
+    ],
+    [
+      "14:31",
+      <span className="text-[#CDD004]">
+        37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
+      </span>,
+      "223.1M XRP",
+      "US$114.5M",
+    ],
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <div className="bg-[#1b1b1b] bg-blend-overlay h-screen  overflow-hidden relative">
+        <img
+          src={camelBg.src}
+          alt="camel"
+          className="object-contain bg-blend-overlay absolute -top-40"
+        />
+        <div className="h-full absolute z-10 w-[100%]  bg-black bg-opacity-80"></div>
+
+        <div className="flex  absolute left-0 right-0 top-0 z-40 w-[90%] h-full  items-center mx-auto">
+          <div className="">
+            <h4 className="text-[#FEC637] capitalize font-outfit text-[16px]">
+              All The Way
+            </h4>
+            <h2 className="text-white font-semibold text-[50px] font-outfit">
+              From a <span className="text-[#FF4040] ">52°</span> degree country
+            </h2>
+            <h3 className="text-white text-center font-outfit text-[25px]">
+              To the <span className="text-[#5076F2] ">XRP</span> Ledger
+            </h3>
+            <h2 className="text-white  font-outfit text-[22px]">
+              XRPL is a{" "}
+              <span className="text-[#FEC637] ">
+                Decentralized, Public Blockchain
+              </span>
+            </h2>
+          </div>
+
+          <div className="flex-1 ">
+            <div className="border rounded-2xl w-[60%] float-end  bg-[#45484E]">
+              <div className="flex gap-4 p-5 items-center">
+                <img src="./assets/xlogo.png" className="w-[60px] h-[60px]" />
+                <div className="text-[23px]">
+                  <h3 className="text-[#CDD004] font-outfit">XRP (XRP)</h3>
+                  <h3 className="text-white font-outfit">
+                    0.539491 USD
+                    <span className="text-[#FF4A00]">(-2.06%)</span>
+                  </h3>
+                </div>
+              </div>
+
+              <div className="flex font-lato border-y border-[#999DA3]">
+                <div className="flex-1 text-[18px]">
+                  <div className="text-white flex-1 py-4 text-center justify-center items-center">
+                    <h4 className="uppercase my-2 ">Rank</h4>
+                    <p>6</p>
+                  </div>
+                </div>
+
+                <div className="border-x flex-1  border-[#999DA3]">
+                  <div className="text-white text-[18px] flex-1 py-4 text-center justify-center items-center">
+                    <h4 className="uppercase my-2">MARKET CAP</h4>
+                    <p>$29.32 B USD</p>
+                  </div>
+                </div>
+                <div className=" flex-1">
+                  <div className="text-white text-[18px] py-4 text-center justify-center items-center">
+                    <h4 className="uppercase my-2">VOLUME</h4>
+                    <p>$618.13 M USD</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="py-4 text-center">
+                <p className="text-[#CDD004] text-[10px] underline">
+                  Powered by CoinMarketCap
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="py-5">
+        <div className="w-[90%] mx-auto">
+          <IconHeading
+            icon={
+              <Lottie
+                animationData={clusterTitleLottie}
+                loop={true}
+                autoplay={true}
+                style={{ width: 60, height: 60, margin: "0 auto" }}
+              />
+            }
+            title={"XRPK cluster status"}
+          />
+
+          <div className="my-5">
+            <TableComponent data={data} column={column} />
+          </div>
+
+          <div className="my-10">
+            <IconHeading
+              icon={
+                <Lottie
+                  animationData={statisticsTitleLottie}
+                  loop={true}
+                  autoplay={true}
+                  style={{ width: 60, height: 60, margin: "0 auto" }}
+                />
+              }
+              title={"XRPL live statistics"}
+            />
+
+            <div className="flex my-5 gap-5">
+              <div className="flex-1">
+                <LedgerCard
+                  text="143"
+                  icon={ledgerIndexLottie}
+                  title={"Ledger index"}
+                />
+              </div>
+              <div className="flex-1">
+                <LedgerCard
+                  text="00:00:00"
+                  icon={closingTimeLottie}
+                  title={"Close time"}
+                />
+              </div>
+              <div className="flex-1">
+                <LedgerCard text="123" icon={TPSLottie} title={"TPS"} />
+              </div>
+              <div className="flex-1">
+                <LedgerCard
+                  text="200"
+                  icon={TransactionLottie}
+                  title={"Transaction"}
+                />
+              </div>
+              <div className="flex-1">
+                <LedgerCard
+                  text="124"
+                  icon={proposersLottie}
+                  title={"Proposers"}
+                />
+              </div>
+              <div className="flex-1">
+                <LedgerCard text="135" icon={quorumLottie} title={"Quorum"} />
+              </div>
+              <div className="flex-1">
+                <LedgerCard text="135" icon={quorumLottie} title={"Accoounts"} />
+              </div>
+            </div>
+          </div>
+
+          <div className="my-10">
+            <IconHeading
+              icon={
+                <Lottie
+                  animationData={LatestValidatedLottie}
+                  loop={true}
+                  autoplay={true}
+                  style={{ width: 60, height: 60, margin: "0 auto" }}
+                />
+              }
+              title={"Latest validated ledgers"}
+            />
+
+            <TableComponent data={ledgerData} column={validatedLedger} />
+          </div>
+
+          <div className="my-10">
+            <IconHeading
+              icon={
+                <Lottie
+                  animationData={sirenLottie}
+                  loop={true}
+                  autoplay={true}
+                  style={{ width: 60, height: 60, margin: "0 auto" }}
+                />
+              }
+              title={"The most significant transactions for the last 24 hours"}
+            />
+
+            <TableComponent
+              data={lastdayData}
+              hideHeader={true}
+              column={ledgerData}
+            />
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
