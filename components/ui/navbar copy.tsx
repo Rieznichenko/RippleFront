@@ -25,8 +25,8 @@ const Navbar = () => {
         <li className={isActive("/contact")}>
           <Link href="/contact">Contact</Link>
         </li>
-        <li className={isActive("/xrpkhub")}>
-          <Link href="/xrpkhub">XRPK Hub</Link>
+        <li className={isActive("/xrpk-hub")}>
+          <Link href="/xrpk-hub">XRPK Hub</Link>
         </li>
       </ul>
     </nav>
