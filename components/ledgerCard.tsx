@@ -4,8 +4,8 @@ import WifiOflline from "./svg/proposers.svg";
 import Lottie from "lottie-react";
 interface ILedgerCardProps {
   icon?: any;
-  title: string;
-  text: string;
+  title?: any;
+  text?: any;
 }
 const LedgerCard = ({ icon, text, title }: ILedgerCardProps) => {
   return (
