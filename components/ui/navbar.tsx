@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import { useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Navbar = () => {
-  const navigation = useParams();
-  console.log("🚀 ~ Navbar ~ navigation:", navigation);
+  const pathName = usePathname();
+  console.log("🚀 ~ Navbar ~ pathName:", pathName);
 
   const isActive = (href: any) => {
-    return "active";
+    return pathName === href ? "text-[#FEC637]" : "";
   };
   return (
     <nav className="flex justify-center">
