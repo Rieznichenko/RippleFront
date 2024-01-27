@@ -28,9 +28,6 @@ import onlineAnimationData from "@/components/lottie/wired-flat-64-wifi-online.j
 import statisticsTitleLottie from "@/components/lottie/wired-flat-1307-hub-network.json";
 
 export default function Home() {
-  const [aspectRatio, setAspectRatio] = useState(16 / 9);
-  console.log("🚀 ~ Home ~ aspectRatio:", aspectRatio);
-
   const column = [
     "Node",
     "Pubkey",
@@ -186,8 +183,8 @@ export default function Home() {
         />
         <div className="h-full absolute z-10 w-[100%]  bg-black bg-opacity-80"></div>
 
-        <div className="flex  absolute left-0 right-0 top-0 z-40 w-[90%] h-full  items-center mx-auto">
-          <div className="">
+        <div className="flex flex-col md:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%] h-full  items-center mx-auto">
+          {/* <div className="">
             <h4 className="text-[#FEC637] capitalize font-outfit text-[16px]">
               All The Way
             </h4>
@@ -203,10 +200,29 @@ export default function Home() {
                 Decentralized, Public Blockchain
               </span>
             </h2>
+          </div> */}
+
+          <div className="mt-32 md:mt-0">
+            <h4 className="text-[#FEC637] capitalize font-outfit md:text-[16px]">
+              All The Way
+            </h4>
+            <h2 className="text-white font-semibold text-4xl md:text-[50px] font-outfit">
+              From a <span className="text-[#FF4040] ">52°</span> degree country
+            </h2>
+
+            <h3 className="text-white text-left md:text-center font-outfit  text-2xl sm:text-[25px]">
+              To the <span className="text-[#5076F2] ">XRP</span> Ledger
+            </h3>
+            <h2 className="text-white text-2xl  font-outfit md:text-[22px]">
+              XRPL is a{" "}
+              <span className="text-[#FEC637] ">
+                Decentralized, Public Blockchain
+              </span>
+            </h2>
           </div>
 
           <div className="flex-1 ">
-            <div className="border rounded-2xl w-[60%] float-end  bg-[#45484E]">
+            <div className="border rounded-2xl w-full md:w-[60%] float-end  bg-[#45484E]">
               <div className="flex gap-4 p-5 items-center">
                 <img src="./assets/xlogo.png" className="w-[60px] h-[60px]" />
                 <div className="text-[23px]">
@@ -281,7 +297,7 @@ export default function Home() {
               title={"XRPL live statistics"}
             />
 
-            <div className="flex my-5 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-5 my-5">
               <div className="flex-1">
                 <LedgerCard
                   text="143"
@@ -317,7 +333,11 @@ export default function Home() {
                 <LedgerCard text="135" icon={quorumLottie} title={"Quorum"} />
               </div>
               <div className="flex-1">
-                <LedgerCard text="135" icon={quorumLottie} title={"Accoounts"} />
+                <LedgerCard
+                  text="135"
+                  icon={quorumLottie}
+                  title={"Accoounts"}
+                />
               </div>
             </div>
           </div>
