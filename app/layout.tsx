@@ -35,11 +35,7 @@ export default function RootLayout({
           lato.variable
         )}
       >
-        <div className="h-full bg-[#1B1B1B]">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );

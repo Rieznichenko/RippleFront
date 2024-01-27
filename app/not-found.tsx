@@ -1,6 +1,7 @@
 import camelBg from "@/components/svg/camel.png";
 import notFound from "@/components/svg/notFound.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -9,8 +10,8 @@ export default function NotFound() {
         src={camelBg.src}
         className="relative transform scale-x-[-1] right-auto mx-auto left-auto top-20 -z-0"
       />
-      <div className="bg-[#EDB936] rounded-3xl absolute top-12 left-44 w-[100px]  p-4 text-[#4B4B4B] text-center">
-        XRPK HOME
+      <div className="bg-[#EDB936] z-30 rounded-3xl absolute top-12 left-44 w-[100px]  p-4 text-[#4B4B4B] text-center">
+        <Link href="/homepage">XRPK HOME</Link>
       </div>
       <div className="absolute top-0 left-0 right-0 z-10 w-[80%] mx-auto ">
         <div className="flex gap-10 justify-center items-center flex-col mt-[20rem]">

@@ -76,5 +76,37 @@
 }
 
 @layer utilities {
- 
+  .splash_screen {
+    position: relative;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .splash_screen video#splashVideo {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .splash_screen .skip_intro_btn {
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    max-width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    cursor: pointer;
+    background: #414141;
+    padding: 10px 30px;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: 0.3s;
+  }
+  .splash_screen .skip_intro_btn:hover {
+    opacity: 1;
+  }
+  .splash_screen.universal-dnone {
+    display: none !important;
+  }
 }

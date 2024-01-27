@@ -13,8 +13,8 @@ const Navbar = () => {
   return (
     <nav className="flex justify-center">
       <ul className="flex space-x-4 text-white">
-        <li className={isActive("/")}>
-          <Link href="/">Servers</Link>
+        <li className={isActive("/servers")}>
+          <Link href="/servers">Servers</Link>
         </li>
         <li className={isActive("/location")}>
           <Link href="/location">Location</Link>
