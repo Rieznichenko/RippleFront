@@ -3,8 +3,9 @@ import bg from "@/components/svg/headingBg.png";
 interface IconProps {
   title: string;
   icon?: any;
+  number?: any;
 }
-const IconHeading = ({ title, icon }: IconProps) => {
+const IconHeading = ({ title, icon, number }: IconProps) => {
   return (
     <div className="text-center flex justify-center items-center flex-col py-4">
       {icon && (
@@ -16,7 +17,7 @@ const IconHeading = ({ title, icon }: IconProps) => {
         </div>
       )}
       <h2 className="text-white mt-4 text-4xl font-semibold  font-outfit">
-        {title}
+        {title} {number}
       </h2>
     </div>
   );

@@ -1,16 +1,17 @@
 import React from "react";
+import gradientBg from "@/components/svg/linearGradient.svg";
 
 import temperature from "@/components/svg/wired-flat-819-hot-temperature.gif";
 const Page = () => {
   return (
     <div
       className=""
-      //   style={{
-      //     backgroundImage: `url(${camelBg.src})`,
-      //     backgroundRepeat: "no-repeat",
-      //     backgroundPositionX: "right",
-      //     backgroundPositionY: "bottom",
-      //   }}
+      //  style={{
+      //   backgroundImage: `url(${gradientBg.src})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPositionX: "center",
+      //   backgroundPositionY: "top",
+      // }}
     >
       <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
         <div className="py-[20rem] ">
@@ -31,8 +32,8 @@ const Page = () => {
               <div>
                 <iframe
                   width="100%"
-                  height="600"
-                  src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  height="450"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d560823.5751655257!2d47.795471715108356!3d29.403074395666597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9c83ce455983%3A0xc3ebaef5af09b90e!2sKuwait%20City%2C%20Kuwait!5e0!3m2!1sen!2sin!4v1687761439665!5m2!1sen!2sin"
                 ></iframe>
               </div>
             </div>

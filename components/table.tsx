@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Table,
@@ -43,7 +45,7 @@ const TableComponent = ({
   };
 
   const renderData = (array: any) => {
-    return array.map((item: any, index: any) => {
+    return array?.map((item: any, index: any) => {
       return (
         <TableRow
           key={index}
@@ -51,17 +53,19 @@ const TableComponent = ({
             "bg-[#4f555e] font-lato overflow-hidden text-white border-[#3C3F47] "
           )}
         >
-          {item?.map((nestedItem: any, nestedIndex: any) => {
-            return (
-              <TableCell key={nestedIndex} className="font-medium">
-                {nestedItem}
-              </TableCell>
-            );
-          })}
+          {Object.keys(item).length > 0 &&
+            Object.keys(item).map((nestedItem: any, nestedIndex: any) => {
+              return (
+                <TableCell key={nestedIndex} className="font-medium">
+                  {item[nestedItem]}
+                </TableCell>
+              );
+            })}
         </TableRow>
       );
     });
   };
+
   return (
     <Table className="">
       {!hideHeader && (

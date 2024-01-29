@@ -6,12 +6,12 @@ const Page = () => {
   return (
     <div
       className=""
-      style={{
-        backgroundImage: `url(${serverBg.src})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPositionX: "center",
-        backgroundPositionY: "top",
-      }}
+      // style={{
+      //   backgroundImage: `url(${serverBg.src})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPositionX: "center",
+      //   backgroundPositionY: "top",
+      // }}
     >
       <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
         <div className="py-[20rem] ">

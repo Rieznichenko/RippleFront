@@ -5,7 +5,6 @@ import Link from "next/link";
 
 const Navbar = () => {
   const pathName = usePathname();
-  console.log("🚀 ~ Navbar ~ pathName:", pathName);
 
   const isActive = (href: any) => {
     return pathName === href ? "text-[#FEC637]" : "";

@@ -2,16 +2,20 @@ import React from "react";
 import camelBg from "@/components/svg/camel.png";
 import vetLogo from "@/components/svg/vet_logo.svg";
 import rabitLogo from "@/components/svg/rabit_logo.svg";
+import gradientBg from "@/components/svg/linearGradient.svg";
+import Image from "next/image";
+import Link from "next/link";
+
 const Page = () => {
   return (
     <div
       className=""
-      //   style={{
-      //     backgroundImage: `url(${camelBg.src})`,
-      //     backgroundRepeat: "no-repeat",
-      //     backgroundPositionX: "right",
-      //     backgroundPositionY: "bottom",
-      //   }}
+      // style={{
+      //   backgroundImage: `url(${gradientBg.src})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPositionX: "center",
+      //   backgroundPositionY: "top",
+      // }}
     >
       <img src={camelBg.src} className="absolute right-0 top-20 -z-0" />
       <div className="text-center flex w-[90%] z-10 relative mx-auto  ">
@@ -30,17 +34,36 @@ const Page = () => {
             <p className="flex text-2xl text-center font-semibold justify-center text-white gap-2 items-center">
               Proudly inspired by
               <span className="text-[#68A5FF] gap-2 flex items-center  font-outfit">
-                Vet <img src={vetLogo.src} />
+                <Link
+                  href="https://twitter.com/vet_x0?s=21&t=ILDaEwSewvUv0gqG-RqAtA"
+                  target="_blank"
+                >
+                  Vet
+                  <Image height={40} width={40} src={vetLogo.src} alt="Vet" />
+                </Link>
               </span>
               <span className="text-[#68A5FF] gap-2 flex items-center  font-outfit ">
-                Rabbit <img src={rabitLogo.src} />
+                <Link
+                  href="https://twitter.com/xrpl_rabbit?s=21&t=ILDaEwSewvUv0gqG-RqAtA"
+                  target="_blank"
+                >
+                  Rabbit{" "}
+                  <Image src={rabitLogo.src} height={40} width={40} alt="Vet" />
+                </Link>
               </span>
             </p>
 
             <p className="font-lato text-2xl text-white">
               Check .TOML File here -{" "}
               <span className="text-[#68A5FF]  font-outfit">
-                https://xrptools.alloy.ee/checktoml?domain=xrpkuwait.com&display=html
+                <Link
+                  href={
+                    "https://xrptools.alloy.ee/checktoml?domain=xrpkuwait.com&display=html"
+                  }
+                  target="_blank"
+                >
+                  https://xrptools.alloy.ee/checktoml?domain=xrpkuwait.com&display=html
+                </Link>
               </span>
             </p>
           </div>
@@ -54,73 +77,101 @@ const Page = () => {
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   XRPLedger -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://xrpl.org/index.html
+                    <Link target="_blank" href={"https://xrpl.org/index.html"}>
+                      https://xrpl.org/index.html
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   XRP Cafe NFT Market Place -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://xrp.cafe
+                    <Link target="_blank" href={"https://xrp.cafe"}>
+                      {" "}
+                      https://xrp.cafe
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   XRPLedger Explorer -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://livenet.xrpl.org
+                    <Link target="_blank" href={"https://livenet.xrpl.org"}>
+                      {" "}
+                      https://livenet.xrpl.org
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   Zaphod pool status -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://zstats.alloy.ee
+                    <Link target="_blank" href={"https://zstats.alloy.ee"}>
+                      {" "}
+                      https://zstats.alloy.ee
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   XRPScan -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://xrpscan.com
+                    <Link target="_blank" href={"https://xrpscan.com"}>
+                      {" "}
+                      https://xrpscan.com
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   XRP toolkit -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://www.xrptoolkit.com
+                    <Link target="_blank" href={"https://www.xrptoolkit.com"}>
+                      https://www.xrptoolkit.com
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   Bithomp -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://bithomp.com
+                    <Link target="_blank" href={"https://bithomp.com"}>
+                      https://bithomp.com
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   XRP ledger full history cluster -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://xrplcluster.com
+                    <Link target="_blank" href={"https://xrplcluster.com"}>
+                      https://xrplcluster.com
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   Xumm - XRP Wallet -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://xumm.app
+                    <Link target="_blank" href={"https://xumm.app"}>
+                      https://xumm.app
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   Three XRP -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://threexrp.dev
+                    <Link target="_blank" href={"https://threexrp.dev"}>
+                      https://threexrp.dev
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   Rabbit Guide -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://rabbitkick.club
+                    <Link target="_blank" href={"https://rabbitkick.club"}>
+                      https://rabbitkick.club
+                    </Link>
                   </span>
                 </div>
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   xSpectar -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
-                    https://xspectar.com
+                    <Link target="_blank" href={"https://xspectar.com"}>
+                      https://xspectar.com
+                    </Link>
                   </span>
                 </div>
               </div>

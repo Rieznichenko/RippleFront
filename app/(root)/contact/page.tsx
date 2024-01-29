@@ -2,18 +2,20 @@ import React from "react";
 import camelBg from "@/components/svg/camel_colored.svg";
 import envelope from "@/components/svg/envelope-line-icon.svg";
 import xSocial from "@/components/svg/x-social-media-white-icon.svg";
+import gradientBg from "@/components/svg/linearGradient.svg";
 
 import LedgerCard from "@/components/ledgerCard";
+import Link from "next/link";
 const Page = () => {
   return (
     <div
       className=""
-      //   style={{
-      //     backgroundImage: `url(${camelBg.src})`,
-      //     backgroundRepeat: "no-repeat",
-      //     backgroundPositionX: "right",
-      //     backgroundPositionY: "bottom",
-      //   }}
+      // style={{
+      //   backgroundImage: `url(${gradientBg.src})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPositionX: "center",
+      //   backgroundPositionY: "top",
+      // }}
     >
       <img src={camelBg.src} className="absolute right-0 top-80 -z-0" />
       <div className="text-center flex w-[90%] z-10 relative mx-auto  ">
@@ -32,13 +34,25 @@ const Page = () => {
             <div className="flex-1">
               <LedgerCard
                 icon={envelope}
-                title={<span className="text-[#68A5FF]">33baid@gmail.com</span>}
+                title={
+                  <span className="text-[#68A5FF]">
+                    <Link href={"mailto:33baid@gmail.com"}>
+                      33baid@gmail.com
+                    </Link>
+                  </span>
+                }
               />
             </div>
             <div className="flex-1">
               <LedgerCard
                 icon={xSocial}
-                title={<span className="text-[#68A5FF]">@33baid</span>}
+                title={
+                  <span className="text-[#68A5FF]">
+                    <Link href={"https://twitter.com/33baid"} target="_blank">
+                      @33baid
+                    </Link>
+                  </span>
+                }
               />
             </div>
           </div>

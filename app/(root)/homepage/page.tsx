@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Lottie from "lottie-react"; // Import the Lottie component
-
+import Typed from "react-typed";
+import ok from "@/components/svg/wired-flat-14-doc-ok.gif";
 import camelBg from "@/public/assets/camelbg.jpg";
 import { useEffect, useState } from "react";
 import IconHeading from "@/components/IconHeading";
@@ -21,119 +22,48 @@ import closingTimeLottie from "@/components/svg/system-regular-67-clock.svg";
 import TPSLottie from "@/components/svg/system-regular-33-speed.svg";
 import TransactionLottie from "@/components/svg/system-regular-35-compare.svg";
 import quorumLottie from "@/components/svg/system-regular-96-groups.svg";
+import accounts from "@/components/svg/accounts.svg";
 import proposersLottie from "@/components/svg/system-regular-156-thumbs-up-down.svg";
 
 import offlineAnimationData from "@/components/lottie/wired-flat-64-wifi-offline.json";
 import onlineAnimationData from "@/components/lottie/wired-flat-64-wifi-online.json";
 import statisticsTitleLottie from "@/components/lottie/wired-flat-1307-hub-network.json";
 
+import useServerData from "@/app/hooks/useServerData";
+import { updateTimezone } from "@/lib/utils";
+import useLastDayData from "@/app/hooks/useLastDayData";
+import useExternalScript from "@/app/hooks/useExternalScript";
+
 export default function Home() {
-  const column = [
-    "Node",
-    "Pubkey",
-    "Ledge",
-    "Index Uptime",
-    "Version",
-    "Peers",
-    "Status",
+  const [changeText, setChangeText] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const external = useExternalScript();
+  const { servers, statistics, serverDataColumn } = useServerData();
+  const { ledgers, ledgerColumn } = useLastDayData();
+
+  const ledgerColumn2 = [
+    {
+      key: 1,
+      column: "1",
+    },
+    {
+      key: 2,
+      column: "1",
+    },
+    {
+      key: 3,
+      column: "1",
+    },
+    {
+      key: 4,
+      column: "1",
+    },
   ];
-
-  const data = [
-    [
-      "Node 1",
-      "n94Lo4MBCNHWzDnLY9XuLdFrJPtWoiXYf6eZy8V2xmXLBgJsivAk",
-      "85447351",
-      "47894",
-      "2.0.0",
-      "2.0.0",
-      <Lottie
-        animationData={offlineAnimationData}
-        loop={true}
-        autoplay={true}
-        style={{ width: 30, height: 30, margin: "0 auto" }}
-      />,
-    ],
-    [
-      "Node 1",
-      "n94Lo4MBCNHWzDnLY9XuLdFrJPtWoiXYf6eZy8V2xmXLBgJsivAk",
-      "85447351",
-      "47894222222222",
-      "2.0.0",
-      "2.0.0",
-      <Lottie
-        animationData={onlineAnimationData}
-        loop={true}
-        autoplay={true}
-        style={{ width: 30, height: 30, margin: "0 auto" }}
-      />,
-    ],
-    [
-      "Node 1",
-      "n94Lo4MBCNHWzDnLY9XuLdFrJPtWoiXYf6eZy8V2xmXLBgJsivAk",
-      "85447351",
-      "47894",
-      "2.0.0",
-      "2.0.0",
-      <Lottie
-        animationData={offlineAnimationData}
-        loop={true}
-        autoplay={true}
-        style={{ width: 30, height: 30, margin: "0 auto" }}
-      />,
-    ],
-    [
-      "Node 1",
-      "n94Lo4MBCNHWzDnLY9XuLdFrJPtWoiXYf6eZy8V2xmXLBgJsivAk",
-      "85447351",
-      "47894",
-      "2.0.0",
-      "2.0.0",
-      <Lottie
-        animationData={onlineAnimationData}
-        loop={true}
-        autoplay={true}
-        style={{ width: 30, height: 30, margin: "0 auto" }}
-      />,
-    ],
-  ];
-
-  const validatedLedger = ["Ledger", "Σ(Tx)", "XRP Burned", "Time", "Hash"];
-
-  const ledgerData = [
-    [
-      <span className="text-[#CDD004]">85448464</span>,
-      "142",
-      <span className="text-[#FF4A00]">-0.010099 XRP</span>,
-      "1 seconds ago",
-      "90C595A79B2F9A0DEABE519852A4AFC30790107CD7F6D51149A6EA03CE69315D",
-    ],
-    [
-      <span className="text-[#CDD004]">85448464</span>,
-      "142",
-      <span className="text-[#FF4A00]">-0.010099 XRP</span>,
-      "1 seconds ago",
-      "90C595A79B2F9A0DEABE519852A4AFC30790107CD7F6D51149A6EA03CE69315D",
-    ],
-    [
-      <span className="text-[#CDD004]">85448464</span>,
-      "142",
-      <span className="text-[#FF4A00]">-0.010099 XRP</span>,
-      "1 seconds ago",
-      "90C595A79B2F9A0DEABE519852A4AFC30790107CD7F6D51149A6EA03CE69315D",
-    ],
-    [
-      <span className="text-[#CDD004]">85448464</span>,
-      "142",
-      <span className="text-[#FF4A00]">-0.010099 XRP</span>,
-      "1 seconds ago",
-      "90C595A79B2F9A0DEABE519852A4AFC30790107CD7F6D51149A6EA03CE69315D",
-    ],
-  ];
-
+  //@ts-ignore
   const lastdayData = [
     [
       "14:31",
-      <span className="text-[#CDD004]">
+      <span key={1} className="text-[#CDD004]">
         37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
       </span>,
       "223.1M XRP",
@@ -141,7 +71,7 @@ export default function Home() {
     ],
     [
       "14:31",
-      <span className="text-[#CDD004]">
+      <span key={3} className="text-[#CDD004]">
         37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
       </span>,
       "223.1M XRP",
@@ -149,7 +79,7 @@ export default function Home() {
     ],
     [
       "14:31",
-      <span className="text-[#CDD004]">
+      <span key={5} className="text-[#CDD004]">
         37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
       </span>,
       "223.1M XRP",
@@ -157,7 +87,7 @@ export default function Home() {
     ],
     [
       "14:31",
-      <span className="text-[#CDD004]">
+      <span key={7} className="text-[#CDD004]">
         37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
       </span>,
       "223.1M XRP",
@@ -165,13 +95,18 @@ export default function Home() {
     ],
     [
       "14:31",
-      <span className="text-[#CDD004]">
+      <span key={8} className="text-[#CDD004]">
         37d8ca3d1e8d90dde5180d121a000df05bde72889969088df90767b2bf7eef80
       </span>,
       "223.1M XRP",
       "US$114.5M",
     ],
   ];
+  const handleComplete = () => {
+    setTimeout(() => {
+      setIsPaused(true);
+    }, 6000);
+  };
 
   return (
     <div>
@@ -183,46 +118,58 @@ export default function Home() {
         />
         <div className="h-full absolute z-10 w-[100%]  bg-black bg-opacity-80"></div>
 
-        <div className="flex flex-col md:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%] h-full  items-center mx-auto">
-          {/* <div className="">
-            <h4 className="text-[#FEC637] capitalize font-outfit text-[16px]">
-              All The Way
+        <div className="flex flex-col sm:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%] h-full  items-center mx-auto">
+          <div className="mt-32 sm:mt-0 flex-1 ">
+            <h4 className="text-white mx-24  font-outfit text-[30px]">
+              All the way
             </h4>
-            <h2 className="text-white font-semibold text-[50px] font-outfit">
+            <h2 className="text-white mb-5 mt-0 font-semibold text-4xl text-[45px] font-outfit">
               From a <span className="text-[#FF4040] ">52°</span> degree country
             </h2>
-            <h3 className="text-white text-center font-outfit text-[25px]">
+
+            <h3 className="text-white my-3 text-center font-outfit  text-2xl text-[22px]">
               To the <span className="text-[#5076F2] ">XRP</span> Ledger
             </h3>
-            <h2 className="text-white  font-outfit text-[22px]">
+            <h2 className="text-white text-2xl  font-outfit text-[20px]">
               XRPL is a{" "}
               <span className="text-[#FEC637] ">
                 Decentralized, Public Blockchain
               </span>
-            </h2>
-          </div> */}
+              {/* <Typed
+                strings={[
+                  "community powered utility",
+                  "scalable and sustainable blockchain",
+                  "decentralized, public blockchain",
+                  "greener blockchain",
+                  "5",
+                  "4",
+                  "3",
+                  "2",
+                  "1",
+                  `<img src='${ok.src}'>`,
+                ]}
+                typeSpeed={60}
+                backSpeed={40}
+                className="Typewriter"
+                showCursor={false}
+                preStringTyped={(index:any, { strings, backSpeed }:any) => {
+                  const isNumber =
+                    !isNaN(parseFloat(strings[index])) &&
+                    isFinite(strings[index]);
+                  setChangeText(isNumber);
 
-          <div className="mt-32 md:mt-0">
-            <h4 className="text-[#FEC637] capitalize font-outfit md:text-[16px]">
-              All The Way
-            </h4>
-            <h2 className="text-white font-semibold text-4xl md:text-[50px] font-outfit">
-              From a <span className="text-[#FF4040] ">52°</span> degree country
-            </h2>
+                  const lastIndex = strings.length - 1;
 
-            <h3 className="text-white text-left md:text-center font-outfit  text-2xl sm:text-[25px]">
-              To the <span className="text-[#5076F2] ">XRP</span> Ledger
-            </h3>
-            <h2 className="text-white text-2xl  font-outfit md:text-[22px]">
-              XRPL is a{" "}
-              <span className="text-[#FEC637] ">
-                Decentralized, Public Blockchain
-              </span>
+                  setIsPaused(lastIndex == index);
+                }}
+                onComplete={handleComplete}
+                stopped={isPaused}
+              /> */}
             </h2>
           </div>
 
-          <div className="flex-1 ">
-            <div className="border rounded-2xl w-full md:w-[60%] float-end  bg-[#45484E]">
+          <div className="flex-1 text-white home-widget">
+            {/* <div className="border rounded-2xl w-full md:w-[90%] float-end  bg-[#45484E]">
               <div className="flex gap-4 p-5 items-center">
                 <img src="./assets/xlogo.png" className="w-[60px] h-[60px]" />
                 <div className="text-[23px]">
@@ -261,7 +208,20 @@ export default function Home() {
                   Powered by CoinMarketCap
                 </p>
               </div>
-            </div>
+            </div> */}
+
+            <div
+              className="coinmarketcap-currency-widget"
+              data-currencyid="52"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="true"
+              data-rank="true"
+              data-marketcap="true"
+              data-volume="true"
+              data-statsticker="true"
+              data-stats="USD"
+            ></div>
           </div>
         </div>
       </div>
@@ -281,7 +241,7 @@ export default function Home() {
           />
 
           <div className="my-5">
-            <TableComponent data={data} column={column} />
+            <TableComponent data={servers} column={serverDataColumn} />
           </div>
 
           <div className="my-10">
@@ -300,42 +260,54 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-5 my-5">
               <div className="flex-1">
                 <LedgerCard
-                  text="143"
+                  text={statistics?.ledgerIndex}
                   icon={ledgerIndexLottie}
                   title={"Ledger index"}
                 />
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text="00:00:00"
+                  text={
+                    statistics.closeTime
+                      ? updateTimezone(statistics.closeTime)
+                      : "-"
+                  }
                   icon={closingTimeLottie}
                   title={"Close time"}
                 />
               </div>
               <div className="flex-1">
-                <LedgerCard text="123" icon={TPSLottie} title={"TPS"} />
-              </div>
-              <div className="flex-1">
                 <LedgerCard
-                  text="200"
-                  icon={TransactionLottie}
-                  title={"Transaction"}
+                  text={statistics.TPS ? `${statistics.TPS}/s` : "-"}
+                  icon={TPSLottie}
+                  title={"TPS"}
                 />
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text="124"
+                  text={statistics.txCount ? `${statistics.txCount}` : "-"}
+                  icon={TransactionLottie}
+                  title={"Transactions"}
+                />
+              </div>
+              <div className="flex-1">
+                <LedgerCard
+                  text={statistics.proposers ? `${statistics.proposers}` : "-"}
                   icon={proposersLottie}
                   title={"Proposers"}
                 />
               </div>
               <div className="flex-1">
-                <LedgerCard text="135" icon={quorumLottie} title={"Quorum"} />
+                <LedgerCard
+                  text={statistics.quorum ? `${statistics.quorum}` : "-"}
+                  icon={quorumLottie}
+                  title={"Quorum"}
+                />
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text="135"
-                  icon={quorumLottie}
+                  text={Math.floor(Math.random() * 1000)}
+                  icon={accounts}
                   title={"Accoounts"}
                 />
               </div>
@@ -355,7 +327,7 @@ export default function Home() {
               title={"Latest validated ledgers"}
             />
 
-            <TableComponent data={ledgerData} column={validatedLedger} />
+            <TableComponent data={ledgers} column={ledgerColumn} />
           </div>
 
           <div className="my-10">
@@ -370,12 +342,13 @@ export default function Home() {
               }
               title={"The most significant transactions for the last 24 hours"}
             />
-
-            <TableComponent
-              data={lastdayData}
-              hideHeader={true}
-              column={ledgerData}
-            />
+            <div className="rounded-3xl overflow-hidden">
+              <TableComponent
+                data={lastdayData}
+                hideHeader={true}
+                column={ledgerColumn2}
+              />
+            </div>
           </div>
         </div>
       </div>
