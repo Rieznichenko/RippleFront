@@ -45,11 +45,11 @@ const useLedgerData = () => {
               fee: <div className=" text-left">{item?.fee}</div>,
               result:
                 item?.result?.slice(3) === "SUCCESS" ? (
-                  <div className="bg-[#32E685] text-[#0D793F] border border-[#0D793F] rounded-full px-5 py-2">
+                  <div className="bg-[#32E685] font-semibold text-[#0D793F] border border-[#0D793F] rounded-full px-5 py-2">
                     {item?.result?.slice(3)}
                   </div>
                 ) : (
-                  <div className="bg-[#D9534F] text-[#771815] border border-[#771815] rounded-full px-5 py-2">
+                  <div className="bg-[#D9534F] font-semibold text-[#771815] border border-[#771815] rounded-full px-5 py-2">
                     {item?.result?.slice(3)}
                   </div>
                 ),
