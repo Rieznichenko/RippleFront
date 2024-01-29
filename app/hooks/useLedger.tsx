@@ -1,12 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Lottie from "lottie-react";
 
 import offlineAnimationData from "@/components/lottie/wired-flat-64-wifi-offline.json";
 import { useParams } from "next/navigation";
 
 const useLedgerData = () => {
-  const params = useParams();
-  console.log("🚀 ~ useLedgerData ~ params:", params);
+  const { id } = useParams();
+  console.log("🚀 ~ useLedgerData ~ params:", id);
   const [transactions, setTransactions] = useState([]);
   const [ledger, setLedger] = useState({
     close_time: "-",
@@ -18,9 +18,8 @@ const useLedgerData = () => {
     () => ["Index", "Tx hash", "From", "To", "Amount", "Fee", "Result"],
     []
   );
-
-  const getData = async () =>
-    fetch("https://xrpkuwait.com/ledger/")
+  const getData = useCallback(async () => {
+    fetch(`https://xrpkuwait.com/ledger/${id}`)
       .then((response) => response.json())
       .then((data: any) => {
         var total_fee = 0;
@@ -30,7 +29,35 @@ const useLedgerData = () => {
         data.transactions.transactions.forEach((tx: any) => {
           total_fee += Number(tx.fee);
         });
-        setTransactions(data.transactions.transactions);
+
+        let renderObj = data.transactions.transactions?.map(
+          (item: any, index: any) => {
+            console.log("🚀 ~ renderObj ~ item:", item);
+            return {
+              key: index + 1,
+              txHash: (
+                <div className="truncate text-ellipsis w-20">{item?.hash}</div>
+              ),
+              from: (
+                <div className="truncate text-ellipsis w-20">{item?.from}</div>
+              ),
+              to: <div className="truncate text-ellipsis w-20">{item?.to}</div>,
+              amount: item?.amount,
+              fee: item?.fee,
+              result:
+                item?.result?.slice(3) === "SUCCESS" ? (
+                  <div className="bg-[#32E685] text-[#0D793F] border border-[#0D793F] rounded-full px-5 py-2">
+                    {item?.result?.slice(3)}
+                  </div>
+                ) : (
+                  <div className="bg-[#D9534F] text-[#771815] border border-[#771815] rounded-full px-5 py-2">
+                    {item?.result?.slice(3)}
+                  </div>
+                ),
+            };
+          }
+        );
+        setTransactions(renderObj);
         setLedger({
           close_time: data.transactions.close_time,
           burnedFees: total_fee.toFixed(6),
@@ -40,15 +67,11 @@ const useLedgerData = () => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
+  }, [id]);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      getData();
-    }, 1000); // 1000ms = 1 second
-
-    // Clear the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, []);
+    getData();
+  }, [getData, id]);
 
   return {
     ledger,

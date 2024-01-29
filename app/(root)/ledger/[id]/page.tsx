@@ -11,8 +11,11 @@ import LedgerCard from "@/components/ledgerCard";
 import closingTimeLottie from "@/components/svg/system-regular-67-clock.svg";
 import TransactionLottie from "@/components/svg/system-regular-35-compare.svg";
 import useLedgerData from "@/app/hooks/useLedger";
+import { DataTable } from "@/components/dataTable";
 const Page = () => {
   const { ledgerColumn, ledger, transactions } = useLedgerData();
+  console.log("🚀 ~ Page ~ ledger:", ledger);
+  console.log("🚀 ~ Page ~ transactions:", transactions);
 
   return (
     <div
@@ -36,34 +39,74 @@ const Page = () => {
                   style={{ width: 60, height: 60, margin: "0 auto" }}
                 />
               }
-              number={<span className="text-[#68A5FF]">85487047</span>}
+              number={
+                <span className="text-[#68A5FF]">
+                  {ledger.transactionCount}
+                </span>
+              }
               title={"Transactions in ledger "}
             />
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-5 my-5 w-[80%] mx-auto">
               <div className="flex-1">
                 <LedgerCard
-                  text={<span className="text-[#E8392F]">0.036635 XRP</span>}
+                  text={
+                    <span className="text-[#E8392F]">{ledger.burnedFees}</span>
+                  }
                   icon={burningIcon}
                   title={"XRP Burned"}
                 />
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text="1/24/2024 10:39:22 AM"
+                  text={ledger.close_time}
                   icon={closingTimeLottie}
                   title={"Closed on"}
                 />
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text="139"
+                  text={ledger.transactionCount}
                   icon={TransactionLottie}
                   title={"Total transactions"}
                 />
               </div>
             </div>
             <div className="my-5">
-              <TableComponent data={ledger} column={ledgerColumn} />
+              <TableComponent data={transactions} column={ledgerColumn} />
+              <DataTable
+                columns={[
+                  {
+                    accessorKey: "index",
+                    header: "Index",
+                  },
+                  {
+                    accessorKey: "txhash",
+                    header: "Tx Hash",
+                  },
+                  {
+                    accessorKey: "from",
+                    header: "From",
+                  },
+                  {
+                    accessorKey: "to",
+                    header: "to",
+                  },
+                  {
+                    accessorKey: "amount",
+                    header: "Amount",
+                  },
+                  {
+                    accessorKey: "fee",
+                    header: "Fee",
+                  },
+                  {
+                    accessorKey: "result",
+                    header: "Result",
+                  },
+                ]}
+                data={transactions}
+                key={"Data"}
+              />
             </div>
           </div>
         </div>

@@ -11,10 +11,10 @@ interface ILedgerCardProps {
 }
 const LedgerCard = ({ icon, text, title }: ILedgerCardProps) => {
   return (
-    <div className="rounded-2xl py-10 bg-[#303134]">
+    <div className="rounded-2xl py-2 bg-[#303134]">
       <div className="flex justify-center flex-col items-center ">
-        <div className="rounded-full bg-[#3f4043] p-8 my-5">
-          <div className="rounded-full p-4 bg-[#f0b90b]">
+        <div className="rounded-full bg-[#3f4043] p-6 my-5">
+          <div className="rounded-full p-3 bg-[#f0b90b]">
             <Image
               className="mx-auto"
               src={icon}

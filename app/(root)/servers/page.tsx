@@ -5,16 +5,16 @@ import temperature from "@/components/svg/wired-flat-819-hot-temperature.gif";
 const Page = () => {
   return (
     <div
-      className=""
-      // style={{
-      //   backgroundImage: `url(${serverBg.src})`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundPositionX: "center",
-      //   backgroundPositionY: "top",
-      // }}
+      className="bg-local"
+      style={{
+        backgroundImage: `url(${serverBg.src})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPositionX: "center",
+        backgroundPositionY: "top",
+      }}
     >
       <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
-        <div className="py-[20rem] ">
+        <div className="pt-[20rem] ">
           <div className=" flex flex-col gap-5">
             <h2 className="font-outfit text-6xl font-semibold text-white">
               Servers
