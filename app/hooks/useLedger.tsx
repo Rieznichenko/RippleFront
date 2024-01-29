@@ -6,7 +6,6 @@ import { useParams } from "next/navigation";
 
 const useLedgerData = () => {
   const { id } = useParams();
-  console.log("🚀 ~ useLedgerData ~ params:", id);
   const [transactions, setTransactions] = useState([]);
   const [ledger, setLedger] = useState({
     close_time: "-",
@@ -34,7 +33,7 @@ const useLedgerData = () => {
           (item: any, index: any) => {
             console.log("🚀 ~ renderObj ~ item:", item);
             return {
-              key: index + 1,
+              key: <div className=" text-left">{index + 1}</div>,
               txHash: (
                 <div className="truncate text-ellipsis w-20">{item?.hash}</div>
               ),
@@ -42,8 +41,8 @@ const useLedgerData = () => {
                 <div className="truncate text-ellipsis w-20">{item?.from}</div>
               ),
               to: <div className="truncate text-ellipsis w-20">{item?.to}</div>,
-              amount: item?.amount,
-              fee: item?.fee,
+              amount: <div className=" text-left">{item?.amount}</div>,
+              fee: <div className=" text-left">{item?.fee}</div>,
               result:
                 item?.result?.slice(3) === "SUCCESS" ? (
                   <div className="bg-[#32E685] text-[#0D793F] border border-[#0D793F] rounded-full px-5 py-2">

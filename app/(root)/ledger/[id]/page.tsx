@@ -27,8 +27,8 @@ const Page = () => {
       //   backgroundPositionY: "top",
       // }}
     >
-      <div className="text-center flex justify-center w-[80%] z-10 relative mx-auto ">
-        <div className="py-[10rem] ">
+      <div className="text-center flex-col flex justify-center w-[80%] z-10 relative mx-auto ">
+        <div className="pt-[10rem] ">
           <div className=" flex flex-col gap-5">
             <IconHeading
               icon={
@@ -71,44 +71,10 @@ const Page = () => {
                 />
               </div>
             </div>
-            <div className="my-5">
-              <TableComponent data={transactions} column={ledgerColumn} />
-              <DataTable
-                columns={[
-                  {
-                    accessorKey: "index",
-                    header: "Index",
-                  },
-                  {
-                    accessorKey: "txhash",
-                    header: "Tx Hash",
-                  },
-                  {
-                    accessorKey: "from",
-                    header: "From",
-                  },
-                  {
-                    accessorKey: "to",
-                    header: "to",
-                  },
-                  {
-                    accessorKey: "amount",
-                    header: "Amount",
-                  },
-                  {
-                    accessorKey: "fee",
-                    header: "Fee",
-                  },
-                  {
-                    accessorKey: "result",
-                    header: "Result",
-                  },
-                ]}
-                data={transactions}
-                key={"Data"}
-              />
-            </div>
           </div>
+        </div>
+        <div className="my-5 w-full flex-1">
+          <TableComponent data={transactions} column={ledgerColumn} />
         </div>
       </div>
     </div>
