@@ -6,8 +6,8 @@ import Image from "next/image";
 const Header = () => {
   return (
     <div className="w-[90%]  absolute z-50 left-0 right-0 top-0 m-auto">
-      <div className="flex justify-between">
-        <div className="logo flex justify-center items-center">
+      <div className="w-full">
+        {/* <div className="logo flex justify-center items-center">
           <Image
             src="/assets/logo.gif"
             className="w-20"
@@ -20,7 +20,7 @@ const Header = () => {
               XRP<span className="text-[#CDD004]">Kuwait</span>
             </h3>
           </Link>
-        </div>
+        </div> */}
 
         <div className="flex justify-center items-center">
           <Navbar />

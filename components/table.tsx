@@ -50,7 +50,7 @@ const TableComponent = ({
         <TableRow
           key={index}
           className={cn(
-            "bg-[#4f555e] font-lato overflow-hidden text-white border-[#3C3F47] "
+            "bg-[#4f555e] font-lato overflow-auto text-white border-[#3C3F47] "
           )}
         >
           {Object.keys(item).length > 0 &&

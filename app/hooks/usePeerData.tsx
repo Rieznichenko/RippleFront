@@ -8,7 +8,7 @@ const usePeerData = () => {
     () => [
       "Public Key",
       "Country",
-      "version",
+      "Version",
       "Server State",
       "Direction",
       "Latency",

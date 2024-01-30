@@ -19,7 +19,7 @@ const Page = () => {
     >
       <img src={camelBg.src} className="absolute right-0 top-80 -z-0" />
       <div className="text-center flex w-[90%] z-10 relative mx-auto  ">
-        <div className="pt-[20rem] ">
+        <div className="pt-[10rem] ">
           <div className=" flex items-center flex-col gap-5">
             <h2 className="font-outfit text-6xl font-semibold text-white">
               Contact

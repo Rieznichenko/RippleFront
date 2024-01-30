@@ -31,14 +31,18 @@ const useLedgerData = () => {
 
         let renderObj = data.transactions.transactions?.map(
           (item: any, index: any) => {
-            console.log("🚀 ~ renderObj ~ item:", item);
             return {
               key: <div className=" text-left">{index + 1}</div>,
               txHash: (
                 <div className="truncate text-ellipsis w-20">{item?.hash}</div>
               ),
               from: (
-                <div className="truncate text-ellipsis w-20">{item?.from}</div>
+                <div className="text-nowrap text-left">
+                  {item?.from}{" "}
+                  <span className="px-5 mx-2 py-3 bg-[#004085] rounded-full text-white">
+                    Payment
+                  </span>
+                </div>
               ),
               to: <div className="truncate text-ellipsis w-20">{item?.to}</div>,
               amount: <div className=" text-left">{item?.amount}</div>,

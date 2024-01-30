@@ -14,8 +14,6 @@ import useLedgerData from "@/app/hooks/useLedger";
 import { DataTable } from "@/components/dataTable";
 const Page = () => {
   const { ledgerColumn, ledger, transactions } = useLedgerData();
-  console.log("🚀 ~ Page ~ ledger:", ledger);
-  console.log("🚀 ~ Page ~ transactions:", transactions);
 
   return (
     <div
@@ -73,7 +71,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="my-5 w-full flex-1">
+        <div className="my-5 w-full h-52 relative overflow-auto flex-1">
           <TableComponent data={transactions} column={ledgerColumn} />
         </div>
       </div>

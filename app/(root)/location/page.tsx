@@ -14,7 +14,7 @@ const Page = () => {
       // }}
     >
       <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
-        <div className="pt-[20rem] ">
+        <div className="pt-[10rem] ">
           <div className=" flex flex-col gap-5">
             <h2 className="font-outfit text-6xl font-semibold text-white">
               Location
