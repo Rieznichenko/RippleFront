@@ -16,7 +16,7 @@ const Footer = () => {
           backgroundPositionY: "10%",
         }}
       >
-        <div className="flex items-center flex-col mt-28 left-0 right-0 top-0 justify-end w-[90%]  m-auto">
+        <div className="flex items-center flex-col mt-24 left-0 right-0 top-0 justify-end w-[90%]  m-auto">
           <div className="flex justify-between w-full">
             <div className="logo flex justify-center items-center">
               <Image
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full mt-20 my-3 h-[1px] border-t border-[#C6D5E9] "></div>
+          <div className="w-full mt-16 my-3 h-[1px] border-t border-[#C6D5E9] "></div>
           <p className="flex items-center text-white gap-1">
             <Copyright className="text-white  text-sm" size={16} />{" "}
             {new Date().getFullYear()}
