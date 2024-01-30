@@ -269,7 +269,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-5 my-5">
               <div className="flex-1">
                 <LedgerCard
-                  text={statistics?.ledgerIndex}
+                  text={statistics?.ledgerIndex || "-"}
                   icon={ledgerIndexLottie}
                   title={"Ledger index"}
                 />
@@ -314,11 +314,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex-1">
-                <LedgerCard
-                  text={Math.floor(Math.random() * 1000)}
-                  icon={accounts}
-                  title={"Accoounts"}
-                />
+                <LedgerCard text={"-"} icon={accounts} title={"Accoounts"} />
               </div>
             </div>
           </div>
