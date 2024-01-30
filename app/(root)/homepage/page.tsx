@@ -128,7 +128,7 @@ export default function Home() {
         <div className="h-full absolute  z-10 w-[100%]  bg-black bg-opacity-80"></div>
 
         <div className="flex flex-col md:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%]  md:h-full  items-center mx-auto">
-          <div className="mt-32 md:mt-0 flex-1 ">
+          <div className="mt-52 md:32 md:mt-0 flex-1 ">
             <h4 className="text-white md:mx-24 mx-12  font-outfit text-[20px] md:text-[34px]">
               All the way
             </h4>
