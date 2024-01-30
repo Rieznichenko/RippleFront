@@ -26,6 +26,7 @@ export default function RootLayout({
         backgroundRepeat: "no-repeat",
         backgroundPositionX: "center",
         backgroundPositionY: "top",
+        backgroundSize: "cover",
       }}
     >
       <Header />

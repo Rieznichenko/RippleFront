@@ -23,8 +23,8 @@ const Navbar = () => {
   ];
   return (
     <nav className=" w-full  md:border-0">
-      <div className="sm:items-center flex-1 flex-col flex md:flex-row  md:flex">
-        <div className=" flex-1 flex  items-center py-3 md:py-5 md:block">
+      <div className="md:items-center flex-1 flex-col flex md:flex-row  md:flex">
+        <div className=" flex-1 flex justify-center items-center py-3 md:py-5 md:block">
           <Link href="/homepage">
             <div className="logo flex items-center">
               <Image
@@ -49,7 +49,7 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`md:flex-1 bg-[#061929] p-5 rounded-3xl sm:bg-transparent justify-self-center pb-3 mt-2 md:block md:pb-0 md:mt-0 ${
+          className={`flex-1 bg-[#061929] p-5 rounded-3xl md:bg-transparent justify-self-center pb-3 mt-2 md:block md:pb-0 md:mt-0 ${
             state ? "block" : "hidden"
           }`}
         >

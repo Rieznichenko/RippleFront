@@ -10,6 +10,7 @@ const Page = () => {
         backgroundRepeat: "no-repeat",
         backgroundPositionX: "center",
         backgroundPositionY: "top",
+        backgroundSize: "cover",
       }}
     >
       <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
