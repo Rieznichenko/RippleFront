@@ -16,7 +16,7 @@ const Footer = () => {
           backgroundPositionY: "10%",
         }}
       >
-        <div className="flex items-center flex-col mt-40 left-0 right-0 top-0 justify-end w-[90%]  m-auto">
+        <div className="flex items-center flex-col mt-32 left-0 right-0 top-0 justify-end w-[90%]  m-auto">
           <div className="flex justify-between w-full">
             <div className="logo flex justify-center items-center">
               <Image
