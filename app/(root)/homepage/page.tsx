@@ -110,27 +110,36 @@ export default function Home() {
 
   return (
     <div>
-      <div className="bg-[#1b1b1b] bg-blend-overlay h-screen  overflow-hidden relative">
+      <div
+        className="bg-[#1b1b1b]  h-screen  overflow-hidden relative"
+        style={{
+          backgroundImage: `url(${camelBg.src})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPositionX: "center",
+          backgroundPositionY: "top",
+          backgroundSize: "auto 100%",
+        }}
+      >
         <img
           src={camelBg.src}
           alt="camel"
-          className="object-contain bg-blend-overlay absolute -top-40"
+          className="object-contain hidden md:block bg-blend-overlay absolute -top-40"
         />
-        <div className="h-full absolute z-10 w-[100%]  bg-black bg-opacity-80"></div>
+        <div className="h-full absolute  z-10 w-[100%]  bg-black bg-opacity-80"></div>
 
-        <div className="flex flex-col sm:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%] h-full  items-center mx-auto">
-          <div className="mt-32 sm:mt-0 flex-1 ">
-            <h4 className="text-white mx-24  font-outfit text-[34px]">
+        <div className="flex flex-col md:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%]  md:h-full  items-center mx-auto">
+          <div className="mt-32 md:mt-0 flex-1 ">
+            <h4 className="text-white md:mx-24 mx-12  font-outfit text-[20px] md:text-[34px]">
               All the way
             </h4>
-            <h2 className="text-white mb-6 mt-2 font-semibold text-4xl text-[50px] font-outfit">
+            <h2 className="text-white md:mb-6 mb-3 mt-2 font-semibold text-4xl text-[30px] md:text-[50px] font-outfit">
               From a <span className="text-[#FF4040] ">52°</span> degree country
             </h2>
 
-            <h3 className="text-white my-5 text-center font-outfit  text-2xl text-[26px]">
+            <h3 className="text-white md:my-5 my-1 text-center font-outfit  md:text-4xl text-[20px]">
               To the <span className="text-[#5076F2] ">XRP</span> Ledger
             </h3>
-            <h2 className="text-white text-2xl  font-outfit text-[24px]">
+            <h2 className="text-white md:text-4xl text-center md:text-left font-outfit text-[18px]">
               XRPL is a{" "}
               <span className="text-[#FEC637] ">
                 Decentralized, Public Blockchain
@@ -168,7 +177,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="flex-[0.7] text-white home-widget">
+          <div className="flex-[0.7] mt-20 md:mt-0 text-white home-widget">
             {/* <div className="border rounded-2xl w-full md:w-[90%] float-end  bg-[#45484E]">
               <div className="flex gap-4 p-5 items-center">
                 <img src="./assets/xlogo.png" className="w-[60px] h-[60px]" />

@@ -16,32 +16,12 @@ const Navbar = () => {
 
   const menus = [
     { title: "Servers", path: "/servers" },
-    { title: "location", path: "/location" },
+    { title: "Location", path: "/location" },
     { title: "About", path: "/about" },
     { title: "Contact", path: "/contact" },
-    { title: "Xrpkhub", path: "/xrpkhub" },
+    { title: "XRPK Hub", path: "/xrpkhub" },
   ];
   return (
-    // <nav className="flex justify-center">
-    //   <ul className="flex space-x-4 text-white">
-    //     <li className={isActive("/servers")}>
-    //       <Link href="/servers">Servers</Link>
-    //     </li>
-    //     <li className={isActive("/location")}>
-    //       <Link href="/location">Location</Link>
-    //     </li>
-    //     <li className={isActive("/about")}>
-    //       <Link href="/about">About</Link>
-    //     </li>
-    //     <li className={isActive("/contact")}>
-    //       <Link href="/contact">Contact</Link>
-    //     </li>
-    //     <li className={isActive("/xrpkhub")}>
-    //       <Link href="/xrpkhub">XRPK Hub</Link>
-    //     </li>
-    //   </ul>
-    // </nav>
-
     <nav className=" w-full  md:border-0">
       <div className="sm:items-center flex-1 flex-col flex md:flex-row  md:flex">
         <div className=" flex-1 flex  items-center py-3 md:py-5 md:block">

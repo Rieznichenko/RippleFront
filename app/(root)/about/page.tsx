@@ -73,7 +73,7 @@ const Page = () => {
             </h2>
 
             <div className="rounded-xl bg-[#45484E] border w-[60%] border-[#a1a2a5] py-5 px-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-3 my-5">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-3 my-5">
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   XRPLedger -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
