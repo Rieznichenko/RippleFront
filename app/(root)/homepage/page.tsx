@@ -295,7 +295,7 @@ export default function Home() {
                 animationData={clusterTitleLottie}
                 loop={true}
                 autoplay={true}
-                style={{ width: 60, height: 60, margin: "-2px auto 0 auto" }}
+                style={{ width: 60, height: 60, margin: "0 auto" }}
               />
             }
             title={"XRPK cluster status"}
@@ -312,7 +312,7 @@ export default function Home() {
                   animationData={statisticsTitleLottie}
                   loop={true}
                   autoplay={true}
-                  style={{ width: 60, height: 60, margin: "-3px auto 0 auto" }}
+                  style={{ width: 60, height: 60, margin: "0 auto" }}
                 />
               }
               title={"XRPL live statistics"}
@@ -378,7 +378,7 @@ export default function Home() {
                   animationData={LatestValidatedLottie}
                   loop={true}
                   autoplay={true}
-                  style={{ width: 60, height: 60, margin: "-2px auto 0 auto" }}
+                  style={{ width: 60, height: 60, margin: "0 auto" }}
                 />
               }
               title={"Latest validated ledgers"}
@@ -394,10 +394,10 @@ export default function Home() {
                   animationData={sirenLottie}
                   loop={true}
                   autoplay={true}
-                  style={{ width: 60, height: 60, margin: "-5px auto 0 auto" }}
+                  style={{ width: 60, height: 60, margin: "0 auto" }}
                 />
               }
-              title={"Top Transactions"}
+              title={"Top transactions"}
             />
             <div className="rounded-3xl overflow-hidden">
               <TableComponent

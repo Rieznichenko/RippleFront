@@ -48,7 +48,7 @@ const Page = () => {
       // }}
     >
       <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
-        <div className="py-[10rem] ">
+        <div className="py-[10rem] w-full">
           <div className=" flex flex-col gap-5">
             <IconHeading
               icon={

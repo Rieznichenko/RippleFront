@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import React from "react";
 import gradientBg from "@/components/svg/linearGradient.svg";
 import LatestValidatedLottie from "@/components/lottie/wired-lineal-1020-rules-book-guideline.json";
+import ErrorLottie from "@/components/lottie/wired-leaneal-25-error.json";
 import burningIcon from "@/components/svg/fire-2-64.png";
 import IconHeading from "@/components/IconHeading";
 import TableComponent from "@/components/table";
@@ -28,27 +29,48 @@ const Page = () => {
       <div className="text-center flex-col flex justify-center w-[80%] z-10 relative mx-auto ">
         <div className="pt-[10rem] ">
           <div className=" flex flex-col gap-5">
-            <IconHeading
-              icon={
-                <Lottie
-                  animationData={LatestValidatedLottie}
-                  loop={true}
-                  autoplay={true}
-                  style={{ width: 60, height: 60, margin: "0 auto" }}
-                />
-              }
-              number={
-                <span className="text-[#68A5FF]">
-                  {ledger.transactionCount}
-                </span>
-              }
-              title={"Transactions in ledger "}
-            />
+            {parseInt(ledger.transactionCount) === 0 ? (
+              <IconHeading
+                icon={
+                  <Lottie
+                    animationData={ErrorLottie}
+                    loop={true}
+                    autoplay={true}
+                    style={{ width: 60, height: 60, margin: "0 auto" }}
+                  />
+                }
+                number={
+                  <span className="text-[#68A5FF]">
+                    {ledger.transactionCount}
+                  </span>
+                }
+                title={"No transaction data found"}
+              />
+            ) : (
+              <IconHeading
+                icon={
+                  <Lottie
+                    animationData={LatestValidatedLottie}
+                    loop={true}
+                    autoplay={true}
+                    style={{ width: 60, height: 60, margin: "0 auto" }}
+                  />
+                }
+                number={
+                  <span className="text-[#68A5FF]">
+                    {ledger.transactionCount}
+                  </span>
+                }
+                title={"Transactions in ledger "}
+              />
+            )}
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-5 my-5 w-[80%] mx-auto">
               <div className="flex-1">
                 <LedgerCard
                   text={
-                    <span className="text-[#E8392F]">{ledger.burnedFees}</span>
+                    <span className="text-[#E8392F]">
+                      {ledger.burnedFees || "-"}
+                    </span>
                   }
                   icon={burningIcon}
                   title={"XRP Burned"}
@@ -56,14 +78,14 @@ const Page = () => {
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text={ledger.close_time}
+                  text={ledger.close_time || "-"}
                   icon={closingTimeLottie}
                   title={"Closed on"}
                 />
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text={ledger.transactionCount}
+                  text={ledger.transactionCount || "-"}
                   icon={TransactionLottie}
                   title={"Total transactions"}
                 />

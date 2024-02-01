@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="logo flex items-center">
               <Image
                 src="/assets/logo.gif"
-                className="w-20 -mt-3"
+                className="w-20 -mt-2"
                 width={100}
                 height={100}
                 alt="logo"
@@ -55,8 +55,10 @@ const Navbar = () => {
         >
           <ul className="justify-end items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {menus.map((item, idx) => (
-              <li key={idx} className="text-white hover:text-[#FEC637]">
-                <Link href={item.path}>{item.title}</Link>
+              <li key={idx} className={`text-white hover:text-[#FEC637]`}>
+                <Link className={`${isActive(item.path)}`} href={item.path}>
+                  {item.title}
+                </Link>
               </li>
             ))}
           </ul>

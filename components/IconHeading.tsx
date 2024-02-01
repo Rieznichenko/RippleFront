@@ -11,12 +11,12 @@ const IconHeading = ({ title, icon, number }: IconProps) => {
       {icon && (
         <div
           className="text-center h-[80px] w-[90px] flex items-start pt-3 justify-center bg-no-repeat"
-          style={{ backgroundImage: `url(${bg.src})` }}
+          // style={{ backgroundImage: `url(${bg.src})` }}
         >
           {icon}
         </div>
       )}
-      <h2 className="text-white mt-4 text-4xl font-semibold  font-outfit">
+      <h2 className="text-white  text-4xl font-semibold  font-outfit">
         {title} {number}
       </h2>
     </div>
