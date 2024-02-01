@@ -13,6 +13,7 @@ import closingTimeLottie from "@/components/svg/system-regular-67-clock.svg";
 import TransactionLottie from "@/components/svg/system-regular-35-compare.svg";
 import useLedgerData from "@/app/hooks/useLedger";
 import { DataTable } from "@/components/dataTable";
+import { updateTimezone } from "@/lib/utils";
 const Page = () => {
   const { ledgerColumn, ledger, transactions } = useLedgerData();
 
@@ -29,7 +30,7 @@ const Page = () => {
       <div className="text-center flex-col flex justify-center w-[80%] z-10 relative mx-auto ">
         <div className="pt-[10rem] ">
           <div className=" flex flex-col gap-5">
-            {parseInt(ledger.transactionCount) === 0 ? (
+            {ledger.transactionCount === "-" ? (
               <IconHeading
                 icon={
                   <Lottie
@@ -41,7 +42,9 @@ const Page = () => {
                 }
                 number={
                   <span className="text-[#68A5FF]">
-                    {ledger.transactionCount}
+                    {ledger.transactionCount === "-"
+                      ? ""
+                      : ledger.transactionCount}
                   </span>
                 }
                 title={"No transaction data found"}
@@ -69,7 +72,7 @@ const Page = () => {
                 <LedgerCard
                   text={
                     <span className="text-[#E8392F]">
-                      {ledger.burnedFees || "-"}
+                      {ledger.burnedFees === "-" ? "" : ledger.burnedFees}
                     </span>
                   }
                   icon={burningIcon}
@@ -78,14 +81,22 @@ const Page = () => {
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text={ledger.close_time || "-"}
+                  text={
+                    ledger.close_time === "-"
+                      ? ""
+                      : updateTimezone(ledger.close_time)
+                  }
                   icon={closingTimeLottie}
                   title={"Closed on"}
                 />
               </div>
               <div className="flex-1">
                 <LedgerCard
-                  text={ledger.transactionCount || "-"}
+                  text={
+                    ledger.transactionCount === "-"
+                      ? ""
+                      : ledger.transactionCount
+                  }
                   icon={TransactionLottie}
                   title={"Total transactions"}
                 />

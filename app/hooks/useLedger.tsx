@@ -37,8 +37,8 @@ const useLedgerData = () => {
                 <div className="truncate text-ellipsis w-20">{item?.hash}</div>
               ),
               from: (
-                <div className="text-nowrap text-left">
-                  {item?.from}{" "}
+                <div className="text-nowrap text-left flex gap-2 justify-end">
+                  <div className="">{item?.from} </div>
                   <span className="px-5 mx-2 py-3 bg-[#004085] rounded-full text-white">
                     Payment
                   </span>
@@ -49,11 +49,11 @@ const useLedgerData = () => {
               fee: <div className=" text-left">{item?.fee}</div>,
               result:
                 item?.result?.slice(3) === "SUCCESS" ? (
-                  <div className="bg-[#32E685] font-semibold text-[#0D793F] border border-[#0D793F] rounded-full px-5 py-2">
+                  <div className="bg-[#32E685] inline-block font-semibold text-[#0D793F] border border-[#0D793F] rounded-full px-5 py-2">
                     {item?.result?.slice(3)}
                   </div>
                 ) : (
-                  <div className="bg-[#D9534F] font-semibold text-[#771815] border border-[#771815] rounded-full px-5 py-2">
+                  <div className="bg-[#D9534F] inline-block font-semibold text-[#771815] border border-[#771815] rounded-full px-5 py-2">
                     {item?.result?.slice(3)}
                   </div>
                 ),
