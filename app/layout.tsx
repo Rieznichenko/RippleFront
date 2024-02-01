@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-background font-outfit antialiased",
+          "bg-background bg-[#1B1B1B] font-outfit antialiased",
           outfit.variable,
           lato.variable
         )}

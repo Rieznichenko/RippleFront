@@ -19,7 +19,7 @@ export default function RootLayout({
   if (!mounted) return <></>;
   return (
     <div
-      className="h-full  bg-[#1B1B1B] bg-scroll"
+      className="h-full 2xl:h-screen  bg-[#1B1B1B] bg-scroll"
       style={{
         backgroundImage:
           pathName !== "/homepage" ? `url(${gradientBg.src})` : "none",
