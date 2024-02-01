@@ -79,6 +79,7 @@ const useLedgerData = () => {
   return {
     ledger,
     transactions,
+    ledgerNumber: id,
     ledgerColumn: column,
   };
 };

@@ -15,7 +15,7 @@ import useLedgerData from "@/app/hooks/useLedger";
 import { DataTable } from "@/components/dataTable";
 import { updateTimezone, updateTimezone2 } from "@/lib/utils";
 const Page = () => {
-  const { ledgerColumn, ledger, transactions } = useLedgerData();
+  const { ledgerColumn, ledgerNumber, ledger, transactions } = useLedgerData();
 
   return (
     <div
@@ -40,13 +40,7 @@ const Page = () => {
                     style={{ width: 60, height: 60, margin: "0 auto" }}
                   />
                 }
-                number={
-                  <span className="text-[#68A5FF]">
-                    {ledger.transactionCount === "-"
-                      ? ""
-                      : ledger.transactionCount}
-                  </span>
-                }
+                number={<span className="text-[#68A5FF]"></span>}
                 title={"No transaction data found"}
               />
             ) : (
@@ -59,11 +53,7 @@ const Page = () => {
                     style={{ width: 60, height: 60, margin: "0 auto" }}
                   />
                 }
-                number={
-                  <span className="text-[#68A5FF]">
-                    {ledger.transactionCount}
-                  </span>
-                }
+                number={<span className="text-[#68A5FF]">{ledgerNumber}</span>}
                 title={"Transactions in ledger "}
               />
             )}
