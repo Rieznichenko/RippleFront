@@ -124,15 +124,16 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%]  md:h-full  items-center mx-auto">
           <div className="mt-52 md:32 md:mt-0 flex-1 ">
-            <h4 className="text-white font-normal md:mx-24 mx-12  font-outfit text-[20px] md:text-[34px]">
+            <h4 className="text-white font-light md:mx-24 mx-12  font-outfit text-[20px] md:text-[34px]">
               All the way
             </h4>
             <h2 className="text-white md:mb-6 mb-3 mt-2 font-semibold text-4xl text-[30px] md:text-[50px] font-outfit">
               From a <span className="text-[#FF4040] ">52°</span> degree country
             </h2>
 
-            <h3 className="text-white md:mt-5 my-1 text-center font-outfit  md:text-4xl text-[20px]">
-              To the <span className="text-[#5076F2] ">XRP</span> Ledger
+            <h3 className="text-white font-light  md:mt-5 my-1 text-center font-outfit  md:text-4xl text-[20px]">
+              To the <span className="text-[#5076F2] font-bold">XRP</span>{" "}
+              Ledger
             </h3>
 
             <h2 className="text-white flex gap-2 items-center  h-16 md:text-4xl text-center md:text-left font-outfit text-[18px]">
@@ -294,7 +295,7 @@ export default function Home() {
                 animationData={clusterTitleLottie}
                 loop={true}
                 autoplay={true}
-                style={{ width: 60, height: 60, margin: "0 auto" }}
+                style={{ width: 60, height: 60, margin: "-2px auto 0 auto" }}
               />
             }
             title={"XRPK cluster status"}
@@ -311,7 +312,7 @@ export default function Home() {
                   animationData={statisticsTitleLottie}
                   loop={true}
                   autoplay={true}
-                  style={{ width: 60, height: 60, margin: "0 auto" }}
+                  style={{ width: 60, height: 60, margin: "-3px auto 0 auto" }}
                 />
               }
               title={"XRPL live statistics"}
@@ -377,7 +378,7 @@ export default function Home() {
                   animationData={LatestValidatedLottie}
                   loop={true}
                   autoplay={true}
-                  style={{ width: 60, height: 60, margin: "0 auto" }}
+                  style={{ width: 60, height: 60, margin: "-2px auto 0 auto" }}
                 />
               }
               title={"Latest validated ledgers"}
@@ -393,10 +394,10 @@ export default function Home() {
                   animationData={sirenLottie}
                   loop={true}
                   autoplay={true}
-                  style={{ width: 60, height: 60, margin: "0 auto" }}
+                  style={{ width: 60, height: 60, margin: "-5px auto 0 auto" }}
                 />
               }
-              title={"The most significant transactions for the last 24 hours"}
+              title={"Top Transactions"}
             />
             <div className="rounded-3xl overflow-hidden">
               <TableComponent
