@@ -13,7 +13,7 @@ import closingTimeLottie from "@/components/svg/system-regular-67-clock.svg";
 import TransactionLottie from "@/components/svg/system-regular-35-compare.svg";
 import useLedgerData from "@/app/hooks/useLedger";
 import { DataTable } from "@/components/dataTable";
-import { updateTimezone } from "@/lib/utils";
+import { updateTimezone, updateTimezone2 } from "@/lib/utils";
 const Page = () => {
   const { ledgerColumn, ledger, transactions } = useLedgerData();
 
@@ -72,7 +72,9 @@ const Page = () => {
                 <LedgerCard
                   text={
                     <span className="text-[#E8392F]">
-                      {ledger.burnedFees === "-" ? "" : ledger.burnedFees}
+                      {ledger.burnedFees === "-"
+                        ? ""
+                        : ledger.burnedFees + " XRP"}
                     </span>
                   }
                   icon={burningIcon}
@@ -84,7 +86,7 @@ const Page = () => {
                   text={
                     ledger.close_time === "-"
                       ? ""
-                      : updateTimezone(ledger.close_time)
+                      : updateTimezone2(ledger.close_time)
                   }
                   icon={closingTimeLottie}
                   title={"Closed on"}
