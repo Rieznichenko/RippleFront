@@ -33,10 +33,10 @@ import useServerData from "@/app/hooks/useServerData";
 import { updateTimezone } from "@/lib/utils";
 import useLastDayData from "@/app/hooks/useLastDayData";
 import useExternalScript from "@/app/hooks/useExternalScript";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
   const [changeText, setChangeText] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
   const external = useExternalScript();
   const { servers, statistics, serverDataColumn } = useServerData();
   const { ledgers, ledgerColumn } = useLastDayData();
@@ -102,11 +102,6 @@ export default function Home() {
       "US$114.5M",
     ],
   ];
-  const handleComplete = () => {
-    setTimeout(() => {
-      setIsPaused(true);
-    }, 6000);
-  };
 
   return (
     <div>
@@ -129,20 +124,76 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%]  md:h-full  items-center mx-auto">
           <div className="mt-52 md:32 md:mt-0 flex-1 ">
-            <h4 className="text-white md:mx-24 mx-12  font-outfit text-[20px] md:text-[34px]">
+            <h4 className="text-white font-normal md:mx-24 mx-12  font-outfit text-[20px] md:text-[34px]">
               All the way
             </h4>
             <h2 className="text-white md:mb-6 mb-3 mt-2 font-semibold text-4xl text-[30px] md:text-[50px] font-outfit">
               From a <span className="text-[#FF4040] ">52°</span> degree country
             </h2>
 
-            <h3 className="text-white md:my-5 my-1 text-center font-outfit  md:text-4xl text-[20px]">
+            <h3 className="text-white md:mt-5 my-1 text-center font-outfit  md:text-4xl text-[20px]">
               To the <span className="text-[#5076F2] ">XRP</span> Ledger
             </h3>
-            <h2 className="text-white md:text-4xl text-center md:text-left font-outfit text-[18px]">
-              XRPL is a{" "}
-              <span className="text-[#FEC637] ">
-                Decentralized, Public Blockchain
+
+            <h2 className="text-white flex gap-2 items-center  h-16 md:text-4xl text-center md:text-left font-outfit text-[18px]">
+              XRPL is {changeText ? "FAST" : "a"}
+              <span className="text-[#FEC637]  flex items-center capitalize ">
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString("Decentralized, Public blockchain")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("community powered utility")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("scalable and sustainable blockchain")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("greener blockchain")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .callFunction(() => {
+                        console.log("String typed out!");
+                        setChangeText(true);
+                      })
+
+                      .typeString("5")
+                      .pauseFor(1000)
+                      .deleteAll()
+                      .typeString("4")
+                      .pauseFor(1000)
+                      .deleteAll()
+                      .typeString("3")
+                      .pauseFor(1000)
+                      .deleteAll()
+                      .typeString("2")
+                      .pauseFor(1000)
+                      .deleteAll()
+                      .typeString("1")
+                      .pauseFor(1000)
+                      .deleteAll()
+
+                      .typeString(
+                        `<div class="h-16 mt-5 -ml-1"><img src="${ok.src}" style="width:50px; " } /></div>`
+                      )
+                      .pauseFor(4500)
+                      .deleteAll()
+                      .callFunction(() => {
+                        console.log("All strings were deleted");
+                        setChangeText(false);
+                      })
+
+                      .start();
+                  }}
+                  options={{
+                    autoStart: true,
+                    loop: true,
+                    cursor: "",
+                    deleteSpeed: 20,
+                    delay: 50,
+                  }}
+                />
               </span>
               {/* <Typed
                 strings={[

@@ -17,7 +17,10 @@ const Page = () => {
       //   backgroundPositionY: "top",
       // }}
     >
-      <img src={camelBg.src} className="absolute right-0 top-20 -z-0" />
+      <img
+        src={camelBg.src}
+        className="absolute h-screen right-0 top-20 -z-0"
+      />
       <div className="text-center flex w-[90%] z-10 relative mx-auto  ">
         <div className="pt-[10rem] ">
           <div className=" flex flex-col gap-5">
@@ -31,7 +34,7 @@ const Page = () => {
               validators come to an agreement on orders and the outcome of XRP
               transactions every 3 seconds.
             </p>
-            <p className="flex text-2xl text-center font-semibold justify-center text-white gap-2 items-center">
+            {/* <p className="flex text-2xl text-center font-semibold justify-center text-white gap-2 items-center">
               Proudly inspired by
               <span className="text-[#68A5FF] gap-2 flex items-center  font-outfit">
                 <Link
@@ -51,7 +54,7 @@ const Page = () => {
                   <Image src={rabitLogo.src} height={40} width={40} alt="Vet" />
                 </Link>
               </span>
-            </p>
+            </p> */}
 
             <p className="font-lato text-2xl text-white">
               Check .TOML File here -{" "}
@@ -72,7 +75,7 @@ const Page = () => {
               Links / Resources:
             </h2>
 
-            <div className="rounded-xl bg-[#45484E] border w-[60%] border-[#a1a2a5] py-5 px-5">
+            <div className="rounded-xl bg-[#45484E] border w-[80%] border-[#a1a2a5] py-5 px-5">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-3 my-5">
                 <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
                   XRPLedger -

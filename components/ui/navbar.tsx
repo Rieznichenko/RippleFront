@@ -29,12 +29,12 @@ const Navbar = () => {
             <div className="logo flex items-center">
               <Image
                 src="/assets/logo.gif"
-                className="w-20"
+                className="w-20 -mt-3"
                 width={100}
                 height={100}
                 alt="logo"
               />
-              <h3 className="font-bold text-4xl font-outfit text-white flex gap-1">
+              <h3 className="font-bold text-5xl font-outfit text-white flex gap-1">
                 XRP<span className="text-[#CDD004]">Kuwait</span>
               </h3>
             </div>

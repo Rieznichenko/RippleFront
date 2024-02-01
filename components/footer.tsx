@@ -23,10 +23,10 @@ const Footer = () => {
                 src="/assets/logo.gif"
                 width={100}
                 height={100}
-                className="w-20"
+                className="w-20 -mt-3"
                 alt="logo"
               />
-              <h3 className="font-bold text-4xl font-outfit text-white flex gap-1">
+              <h3 className="font-bold text-5xl font-outfit text-white flex gap-1">
                 XRP<span className="text-[#CDD004]">Kuwait</span>
               </h3>
             </div>
