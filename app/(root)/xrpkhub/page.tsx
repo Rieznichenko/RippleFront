@@ -3,6 +3,7 @@
 import Lottie from "lottie-react";
 import React from "react";
 import gradientBg from "@/components/svg/linearGradient.svg";
+import serverStateTitle from "@/components/lottie/wired-flat-952-business-network.json";
 
 import temperature from "@/components/svg/wired-flat-819-hot-temperature.gif";
 import IconHeading from "@/components/IconHeading";
@@ -53,7 +54,7 @@ const Page = () => {
             <IconHeading
               icon={
                 <Lottie
-                  animationData={statisticsTitleLottie}
+                  animationData={serverStateTitle}
                   loop={true}
                   autoplay={true}
                   style={{ width: 60, height: 60, margin: "0 auto" }}

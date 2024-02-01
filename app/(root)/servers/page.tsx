@@ -4,14 +4,13 @@ import server from "@/components/svg/wired-lineal-58-servers.gif";
 const Page = () => {
   return (
     <div
-      className="bg-local"
-      style={{
-        backgroundImage: `url(${serverBg.src})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPositionX: "center",
-        backgroundPositionY: "top",
-        backgroundSize: "cover",
-      }}
+      className=" h-full 1xl:h-screen "
+      // style={{
+      //   backgroundImage: `url(${serverBg.src})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundAttachment: "fixed",
+      //   backgroundSize: "100%",
+      // }}
     >
       <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
         <div className="pt-[10rem] ">

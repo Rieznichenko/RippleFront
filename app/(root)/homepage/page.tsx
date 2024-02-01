@@ -136,7 +136,7 @@ export default function Home() {
               Ledger
             </h3>
 
-            <h2 className="text-white flex gap-2 items-center  h-16 md:text-4xl text-center md:text-left font-outfit text-[18px]">
+            <h2 className="text-white text-left sm:flex gap-2 items-center  h-16 md:text-4xl sm:text-center md:text-left font-outfit text-[18px]">
               XRPL is {changeText ? "FAST" : "a"}
               <span className="text-[#FEC637]  flex items-center capitalize ">
                 <Typewriter
@@ -229,7 +229,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="flex-[0.7] mt-20 md:mt-0 text-white home-widget">
+          <div className="sm:flex-[0.7] flex-1 mt-20 md:mt-0 text-white home-widget">
             {/* <div className="border rounded-2xl w-full md:w-[90%] float-end  bg-[#45484E]">
               <div className="flex gap-4 p-5 items-center">
                 <img src="./assets/xlogo.png" className="w-[60px] h-[60px]" />
