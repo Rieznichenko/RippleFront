@@ -62,7 +62,16 @@ const usePeerData = () => {
               />
             ),
             version: item?.version,
-            serverState: item?.serverState,
+            serverState:
+              item?.serverState === "full" ? (
+                <div className="bg-[#32E685] inline-block font-semibold text-[#0D793F] border border-[#0D793F] rounded-full px-5 py-2">
+                  {item?.serverState}
+                </div>
+              ) : (
+                <div className="bg-[#D9534F] inline-block font-semibold text-[#771815] border border-[#771815] rounded-full px-5 py-2">
+                  {item?.serverState}
+                </div>
+              ),
             direction:
               item.direction == "inbound" ? (
                 <Lottie
