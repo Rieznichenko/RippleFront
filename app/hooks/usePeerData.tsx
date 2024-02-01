@@ -50,6 +50,26 @@ const usePeerData = () => {
       .then((response) => response.json())
       .then((data: any) => {
         let modifyData = data?.map((item: any, index: any) => {
+          let colors = {
+            bg: "bg-[#32E685]",
+            text: "text-[#0D793F]",
+            border: "border-[#0D793F]",
+          };
+
+          if (item?.serverState === "insane") {
+            colors = {
+              bg: "bg-[#d9534f]",
+              text: "text-black",
+              border: "border-[#d9534f]",
+            };
+          } else if (item?.serverState === "unknown") {
+            colors = {
+              bg: "bg-[#f0ad4e]",
+              text: "text-black",
+              border: "border-[#f0ad4e]",
+            };
+          }
+
           return {
             pubkey: item?.pubkey,
             country: (
@@ -62,16 +82,13 @@ const usePeerData = () => {
               />
             ),
             version: item?.version,
-            serverState:
-              item?.serverState === "full" ? (
-                <div className="bg-[#32E685] inline-block font-semibold text-[#0D793F] border border-[#0D793F] rounded-full px-5 py-2">
-                  {item?.serverState}
-                </div>
-              ) : (
-                <div className="bg-[#D9534F] inline-block font-semibold text-[#771815] border border-[#771815] rounded-full px-5 py-2">
-                  {item?.serverState}
-                </div>
-              ),
+            serverState: (
+              <div
+                className={`${colors.bg} inline-block font-semibold ${colors.text} border ${colors.border} rounded-full px-5 py-2`}
+              >
+                {item?.serverState}
+              </div>
+            ),
             direction:
               item.direction == "inbound" ? (
                 <Lottie

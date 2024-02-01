@@ -9,7 +9,8 @@ const Navbar = () => {
   const pathName = usePathname();
 
   const isActive = (href: any) => {
-    return pathName === href ? "text-[#FEC637]" : "";
+    let color = href === "/xrpkhub" ? "text-[#ff4040]" : "text-[#FEC637]";
+    return pathName === href ? color : "";
   };
 
   const [state, setState] = React.useState(false);
