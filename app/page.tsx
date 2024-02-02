@@ -39,7 +39,7 @@ export default function Home() {
       };
     }
     return () => {};
-  }, [window]); // Add history to the dependency array
+  }, [push]); // Add history to the dependency array
 
   const handleSkipIntro = () => {
     push("/homepage");
