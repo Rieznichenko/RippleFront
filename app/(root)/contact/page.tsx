@@ -14,8 +14,8 @@ const Page = () => {
         backgroundImage: `url(${camelBg.src})`,
         backgroundRepeat: "no-repeat",
         backgroundPositionX: "right",
-        backgroundPositionY: "bottom",
-        backgroundSize: "40%",
+        backgroundPositionY: "center",
+        backgroundSize: "20%",
       }}
     >
       {/* <img src={camelBg.src} className="absolute right-0 top-80 -z-0" /> */}
