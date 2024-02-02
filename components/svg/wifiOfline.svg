@@ -1,7 +1,7 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="teih516py0elrori4f1 1" clipPath="url(#clip0_94_473)">
 <g id="Clip path group">
-<mask id="mask0_94_473" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<mask id="mask0_94_473"  style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
 <g id="__lottie_element_44173">
 <path id="Vector" d="M24 0H0V24H24V0Z" fill="white"/>
 </g>
@@ -9,7 +9,7 @@
 <g mask="url(#mask0_94_473)">
 <g id="Group">
 <g id="Clip path group_2">
-<mask id="mask1_94_473" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<mask id="mask1_94_473"  style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
 <g id="__lottie_element_44196">
 <path id="Vector_2" d="M0 0H24V24H0V0Z" fill="white"/>
 </g>
@@ -17,7 +17,7 @@
 <g mask="url(#mask1_94_473)">
 <g id="Group_2">
 <g id="Clip path group_3">
-<mask id="mask2_94_473" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<mask id="mask2_94_473"  style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
 <g id="__lottie_element_44228">
 <path id="Vector_3" d="M0 0H24V24H0V0Z" fill="white"/>
 </g>
@@ -43,11 +43,11 @@
 </g>
 </g>
 <g id="Mask group">
-<mask id="mask3_94_473" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="4" width="22" height="12">
+<mask id="mask3_94_473"  style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="1" y="4" width="22" height="12">
 <g id="Group_10">
 <g id="__lottie_element_44202">
 <g id="Clip path group_4">
-<mask id="mask4_94_473" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<mask id="mask4_94_473"  style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
 <g id="__lottie_element_44203">
 <path id="Vector_7" d="M0 0H24V24H0V0Z" fill="white"/>
 </g>

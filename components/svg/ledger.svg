@@ -4,7 +4,7 @@
 <g id="Group 1261154471">
 <circle id="Ellipse 18" cx="61" cy="61" r="34" fill="#F0B90B"/>
 <g id="Clip path group">
-<mask id="mask0_94_343" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="41" y="41" width="40" height="40">
+<mask id="mask0_94_343"  style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="41" y="41" width="40" height="40">
 <g id="a">
 <path id="Vector" d="M41 41H81V81H41V41Z" fill="white"/>
 </g>
@@ -12,7 +12,7 @@
 <g mask="url(#mask0_94_343)">
 <g id="Group">
 <g id="Clip path group_2">
-<mask id="mask1_94_343" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="41" y="41" width="40" height="40">
+<mask id="mask1_94_343"  style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="41" y="41" width="40" height="40">
 <g id="b">
 <path id="Vector_2" d="M41 41H81V81H41V41Z" fill="white"/>
 </g>

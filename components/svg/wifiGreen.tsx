@@ -8,7 +8,7 @@
   <g clipPath="url(#clip0_94_530)">
     <mask
       id="mask0_94_530"
-      style="mask-type:luminance"
+      style={{ maskType: "luminance" }}
       maskUnits="userSpaceOnUse"
       x="0"
       y="0"
@@ -20,7 +20,7 @@
     <g mask="url(#mask0_94_530)">
       <mask
         id="mask1_94_530"
-        style="mask-type:luminance"
+        style={{ maskType: "luminance" }}
         maskUnits="userSpaceOnUse"
         x="0"
         y="0"
@@ -32,7 +32,7 @@
       <g mask="url(#mask1_94_530)">
         <mask
           id="mask2_94_530"
-          style="mask-type:luminance"
+          style={{ maskType: "luminance" }}
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"
@@ -59,7 +59,7 @@
         </g>
         <mask
           id="mask3_94_530"
-          style="mask-type:alpha"
+          style={{ maskType: "alpha" }}
           maskUnits="userSpaceOnUse"
           x="1"
           y="4"
@@ -68,7 +68,7 @@
         >
           <mask
             id="mask4_94_530"
-            style="mask-type:luminance"
+            style={{ maskType: "luminance" }}
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
