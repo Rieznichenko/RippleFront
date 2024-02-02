@@ -23,15 +23,15 @@ const Footer = () => {
                 src="/assets/logo.gif"
                 width={100}
                 height={100}
-                className="w-20 -mt-2"
+                className="w-14 sm:w-20 -mt-2"
                 alt="logo"
               />
-              <h3 className="font-bold text-5xl font-outfit text-white flex gap-1">
+              <h3 className="font-bold text-3xl sm:text-5xl font-outfit text-white flex gap-1">
                 XRP<span className="text-[#CDD004]">Kuwait</span>
               </h3>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-white text-xl font-lato gap-5">
+            <div className="flex flex-col items-center justify-center text-white text-sm sm:text-xl font-lato gap-5">
               <h4>Social media links </h4>
               <Link
                 href="https://twitter.com/33baid"
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
 
           <div className="w-full mt-16 my-3 h-[1px] border-t border-[#C6D5E9] "></div>
-          <p className="flex items-center text-white gap-1">
+          <p className="flex items-center text-white text-sm sm:text-lg gap-1">
             <Copyright className="text-white  text-sm" size={16} />{" "}
             {new Date().getFullYear()}
             <span className="text-[#FF4A00]">XRP</span> Kuwait. All rights

@@ -19,32 +19,32 @@ const Page = () => {
               Servers
             </h2>
           </div>
-          <div className="my-12 flex items-start gap-5">
+          <div className="my-12 flex  flex-col sm:flex-row sm:items-start gap-5">
             <div className="rounded-3xl bg-opacity-60 my-10 p-10 text-left font-lato text-2xl text-white bg-gradient-to-r from-opacity-30 to-opacity-5 bg-[#45484E] backdrop-blur-40">
-              <div className="flex items-center gap-10">
-                <div className="bg-[#45484E]  p-1 rounded-full">
+              <div className="flex items-center gap-4 sm:gap-10">
+                <div className="bg-[#45484E] p-0 sm:p-1 rounded-full">
                   <img src={server.src} width={40} />
                 </div>
-                <h2 className="font-lato text-[24px] font-semibold">
+                <h2 className="font-lato text-2xl sm:text-[24px] font-semibold">
                   We are running:
                 </h2>
               </div>
-              <p className="py-2 text-xl flex gap-5 flex-col">
+              <p className="py-2 text-lg sm:text-xl flex gap-5 flex-col">
                 <span> - Validator node / Stock server / Public hub</span>
 
                 <span>- One-year ledger history node</span>
               </p>
             </div>
             <div className="rounded-3xl bg-opacity-60 my-10 p-10 text-left font-lato text-2xl text-white bg-gradient-to-r from-opacity-30 to-opacity-5 bg-[#45484E] backdrop-blur-40">
-              <div className="flex items-center gap-10">
-                <div className="bg-[#45484E]  p-1 rounded-full">
+              <div className="flex items-center gap-4 sm:gap-10">
+                <div className="bg-[#45484E] p-0 sm:p-1 rounded-full">
                   <img src={server.src} width={40} />
                 </div>
-                <h2 className="font-lato text-[24px] font-semibold">
+                <h2 className="font-lato text-2xl sm:text-[24px] font-semibold">
                   Our servers are running on:
                 </h2>
               </div>
-              <p className="py-2 text-xl flex gap-3 flex-col">
+              <p className="py-2 text-lg sm:text-xl flex gap-3 flex-col">
                 <span className="text-[#43B2F0]">
                   {" "}
                   - * Validator node / Stock server / Public hub:

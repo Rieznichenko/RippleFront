@@ -21,13 +21,13 @@ const Page = () => {
         src={camelBg.src}
         className="absolute h-screen right-0 top-20 -z-0"
       />
-      <div className="text-center flex w-[90%] z-10 relative mx-auto  ">
+      <div className="text-center flex w-[80%] sm:w-[90%] z-10 relative mx-auto  ">
         <div className="pt-[10rem] ">
           <div className=" flex flex-col gap-5">
             <h2 className="font-outfit text-6xl font-semibold text-white">
               About
             </h2>
-            <p className="font-lato text-2xl text-white">
+            <p className="font-lato text-xl sm:text-2xl text-white">
               XRP Kuwait is currently running 4 cluster rippled servers, running
               on a validator / ledger history / public hub / submission node
               along side 150+ other validators / 700+ ledger history nodes. All

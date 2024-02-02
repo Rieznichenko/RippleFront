@@ -9,35 +9,36 @@ import Link from "next/link";
 const Page = () => {
   return (
     <div
-      className="flex justify-center h-dvh"
+      className="flex justify-center h-dvh bg-center sm:bg-right bg-[length:80%_100%] sm:bg-[length:40%_100%]"
       style={{
         backgroundImage: `url(${camelBg.src})`,
         backgroundRepeat: "no-repeat",
-        backgroundPositionX: "right",
         backgroundPositionY: "center",
-        backgroundSize: "20%",
       }}
     >
       {/* <img src={camelBg.src} className="absolute right-0 top-80 -z-0" /> */}
-      <div className="text-center mx-auto  w-[80%]  ">
+      <div className="text-center mx-auto w-[90%] sm:w-[80%]  ">
         <div className="pt-[10rem] ">
           <div className=" flex items-center flex-col gap-5">
             <h2 className="font-outfit text-6xl font-semibold text-white">
               Contact
             </h2>
-            <p className="font-lato text-2xl w-[70%] text-white">
+            <p className="font-lato  text-xl sm:text-2xl w-[100%] sm:w-[70%] text-white">
               We value your feedback and we are here to assist you. Please feel
               free to reach out about using any of the methods below. We look
               forward to hearing from you!
             </p>
           </div>
-          <div className="my-12 w-[60%] mx-auto flex items-center gap-5">
+          <div className="my-12  w-[100%] sm:w-[60%] mx-auto flex items-center gap-5">
             <div className="flex-1">
               <LedgerCard
                 icon={envelope}
                 title={
                   <span className="text-[#68A5FF]">
-                    <Link href={"mailto:33baid@gmail.com"}>
+                    <Link
+                      href={"mailto:33baid@gmail.com"}
+                      className="text-lg sm:text-xl"
+                    >
                       33baid@gmail.com
                     </Link>
                   </span>
@@ -49,7 +50,11 @@ const Page = () => {
                 icon={xSocial}
                 title={
                   <span className="text-[#68A5FF]">
-                    <Link href={"https://twitter.com/33baid"} target="_blank">
+                    <Link
+                      href={"https://twitter.com/33baid"}
+                      className="text-lg sm:text-xl"
+                      target="_blank"
+                    >
                       @33baid
                     </Link>
                   </span>
