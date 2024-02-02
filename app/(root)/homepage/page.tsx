@@ -120,7 +120,7 @@ export default function Home() {
         {/* <div className="h-full absolute top-0  z-10 w-[100%]  bg-black  opacity-80"></div> */}
         <div className="flex w-[90%] items-center justify-center sm:flex-row flex-col ">
           <div className=" flex-1 ">
-            <h4 className="text-white font-thin md:mx-24 sm:my-0 mx-12 sm:text-[16px]  font-outfit md:text-[34px]">
+            <h4 className="text-white font-thin text-[20px] md:mx-24 sm:my-0 mx-12 sm:text-[16px]  font-outfit md:text-[34px]">
               All the way
             </h4>
             <h2 className="text-white md:mb-6 mb-3 sm:my-0 mt-2 font-semibold text-4xl  md:text-[50px] font-outfit">
