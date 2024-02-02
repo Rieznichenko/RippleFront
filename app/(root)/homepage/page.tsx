@@ -175,7 +175,7 @@ export default function Home() {
                         `<div class="h-16 flex justify-center items-end sm:mt-7 -ml-1"><img class="h-16" src="${ok.src}" /></div>`
                       )
                       .pauseFor(4500)
-                      // .deleteAll()
+                      .deleteAll()
                       .callFunction(() => {
                         console.log("All strings were deleted");
                         setChangeText(false);
@@ -185,7 +185,7 @@ export default function Home() {
                   }}
                   options={{
                     autoStart: true,
-                    loop: false,
+                    loop: true,
                     cursor: "",
                     deleteSpeed: 20,
                     delay: 50,
