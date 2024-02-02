@@ -64,6 +64,7 @@ const useServerData = () => {
   });
 
   const [servers, setServers] = useState(fakeObject);
+  console.log("🚀 ~ useServerData ~ servers:", servers);
   const [statistics, setStatistics] = useState({
     ledgerIndex: 0,
     closeTime: "",
@@ -74,10 +75,13 @@ const useServerData = () => {
   });
 
   const getData = async () =>
-    fetch("https://xrpkuwait.com/serverstates")
+    fetch(
+      `https://xrpkuwait.com/${
+        pathName === "/xrpkhub" ? "serverstate" : "serverstates"
+      }`
+    )
       .then((response) => response.json())
       .then((data: any) => {
-        console.log("SERVER", data);
         let modifyData: any = [];
 
         if (data.serverStatus) {
@@ -126,9 +130,37 @@ const useServerData = () => {
                     };
               return obj;
             });
+        } else {
+          modifyData =
+            data?.length > 0 &&
+            data?.map((item: any, index: number) => {
+              let icon = item.peers
+                ? onlineAnimationData
+                : offlineAnimationData;
+              let obj = {
+                node: item.node,
+                pubkey: item.pubkey,
+                ledger: item.ledger_Index,
+                uptime: item.uptime,
+                proposers: item.proposers,
+                quorum: item.quorum,
+
+                version: item.version,
+                peers: item.peers,
+                status: (
+                  <Lottie
+                    animationData={icon}
+                    loop={true}
+                    autoplay={true}
+                    style={{ width: 30, height: 30, margin: "0 auto" }}
+                  />
+                ),
+              };
+              return obj;
+            });
         }
 
-        if (data.serverStatus) setServers(modifyData);
+        setServers(modifyData);
         if (data.statistics) setStatistics(data.statistics);
       })
       .catch((error) => {

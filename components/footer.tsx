@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full mt-16 my-3 h-[1px] border-t border-[#C6D5E9] "></div>
+          <div className="w-full mt-5z sm:mt-16 my-3 h-[1px] border-t border-[#C6D5E9] "></div>
           <p className="flex items-center text-white text-sm sm:text-lg gap-1">
             <Copyright className="text-white  text-sm" size={16} />{" "}
             {new Date().getFullYear()}

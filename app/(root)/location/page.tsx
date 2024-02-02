@@ -13,19 +13,31 @@ const Page = () => {
       //   backgroundPositionY: "top",
       // }}
     >
-      <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
-        <div className="pt-[10rem] ">
+      <div className="text-left sm:text-center flex  mx-auto items-center justify-center w-[90%] ">
+        <div className="pt-[10rem]  ">
           <div className=" flex flex-col gap-5">
-            <h2 className="font-outfit text-6xl font-semibold text-white">
+            <h2 className="font-outfit text-3xl  sm:text-6xl font-semibold text-white">
               Location
             </h2>
-            <p className="font-lato text-2xl flex gap-2 justify-center items-end text-white">
+
+            <p className="font-lato text-left text-xl sm:text-2xl text-white">
+              XRP Kuwait servers are located in Kuwait City where the
+              temperature is <span className="text-[#FF4040]">52°</span> degrees
+              <img
+                className="max-w-12 align-middle h-auto inline"
+                src={temperature.src}
+                width="80"
+                height="80"
+              />
+            </p>
+
+            {/* <p className="font-lato text-left text-xl sm:text-2xl gap-2  text-white">
               XRP Kuwait servers are located in Kuwait City where the
               temperature is <span className="text-[#FF4040]">52°</span> degrees{" "}
-              <span className="-my-2 -mx-2">
+              <span className="-my-2 w-20 block -mx-2">
                 <img src={temperature.src} width={50} />
               </span>
-            </p>
+            </p> */}
           </div>
           <div className="my-12 flex items-center flex-col gap-5">
             <div className=" rounded-2xl overflow-hidden  border w-[100%] border-[#a1a2a5] ">

@@ -21,13 +21,13 @@ const Page = () => {
         src={camelBg.src}
         className="absolute h-screen right-0 top-20 -z-0"
       />
-      <div className="text-center flex w-[80%] sm:w-[90%] z-10 relative mx-auto  ">
-        <div className="pt-[10rem] ">
+      <div className="text-left sm:text-center flex w-[80%] sm:w-[90%] z-10 relative mx-auto  ">
+        <div className="pt-[10rem]  w-full ">
           <div className=" flex flex-col gap-5">
-            <h2 className="font-outfit text-6xl font-semibold text-white">
+            <h2 className="font-outfit text-3xl sm:text-6xl font-semibold text-white">
               About
             </h2>
-            <p className="font-lato text-xl sm:text-2xl text-white">
+            <p className="font-lato  text-sm sm:text-2xl text-white">
               XRP Kuwait is currently running 4 cluster rippled servers, running
               on a validator / ledger history / public hub / submission node
               along side 150+ other validators / 700+ ledger history nodes. All
@@ -56,7 +56,7 @@ const Page = () => {
               </span>
             </p> */}
 
-            <p className="font-lato text-2xl text-white">
+            <p className="font-lato w-full text-sm sm:text-2xl text-white">
               Check .TOML File here -{" "}
               <span className="text-[#68A5FF]  font-outfit">
                 <Link
@@ -70,14 +70,14 @@ const Page = () => {
               </span>
             </p>
           </div>
-          <div className="my-12 flex items-center flex-col gap-5">
-            <h2 className="font-outfit text-6xl font-semibold text-white">
+          <div className="my-12 w-full flex sm:items-center flex-col gap-5">
+            <h2 className="font-outfit text-3xl sm:text-6xl font-semibold text-white">
               Links / Resources:
             </h2>
 
-            <div className="rounded-xl bg-[#45484E] border w-[80%] border-[#a1a2a5] py-5 px-5">
+            <div className="rounded-xl bg-[#45484E] border w-full sm:w-[80%] border-[#a1a2a5] py-5 px-5">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-3 my-5">
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   XRPLedger -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://xrpl.org/index.html"}>
@@ -85,7 +85,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   XRP Cafe NFT Market Place -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://xrp.cafe"}>
@@ -94,7 +94,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   XRPLedger Explorer -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://livenet.xrpl.org"}>
@@ -103,7 +103,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   Zaphod pool status -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://zstats.alloy.ee"}>
@@ -112,7 +112,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   XRPScan -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://xrpscan.com"}>
@@ -121,7 +121,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   XRP toolkit -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://www.xrptoolkit.com"}>
@@ -129,7 +129,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   Bithomp -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://bithomp.com"}>
@@ -137,7 +137,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   XRP ledger full history cluster -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://xrplcluster.com"}>
@@ -145,7 +145,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   Xumm - XRP Wallet -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://xumm.app"}>
@@ -153,7 +153,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   Three XRP -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://threexrp.dev"}>
@@ -161,7 +161,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   Rabbit Guide -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://rabbitkick.club"}>
@@ -169,7 +169,7 @@ const Page = () => {
                     </Link>
                   </span>
                 </div>
-                <div className="flex-1 font-lato text-xl text-left gap-2 text-white">
+                <div className="flex-1 font-lato  text-sm sm:text-xl text-left gap-2 text-white">
                   xSpectar -
                   <span className="text-[#68A5FF]  ml-2 underline gap-2">
                     <Link target="_blank" href={"https://xspectar.com"}>

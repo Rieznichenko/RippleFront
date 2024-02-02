@@ -16,7 +16,7 @@ const IconHeading = ({ title, icon, number }: IconProps) => {
           {icon}
         </div>
       )}
-      <h2 className="text-white  text-4xl font-semibold  font-outfit">
+      <h2 className="font-outfit text-3xl sm:text-4xl font-semibold text-white">
         {title} {number}
       </h2>
     </div>

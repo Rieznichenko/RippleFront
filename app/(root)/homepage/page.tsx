@@ -151,7 +151,6 @@ export default function Home() {
                       .pauseFor(2500)
                       .deleteAll()
                       .callFunction(() => {
-                        console.log("String typed out!");
                         setChangeText(true);
                       })
 
@@ -177,7 +176,6 @@ export default function Home() {
                       .pauseFor(4500)
                       .deleteAll()
                       .callFunction(() => {
-                        console.log("All strings were deleted");
                         setChangeText(false);
                       })
 

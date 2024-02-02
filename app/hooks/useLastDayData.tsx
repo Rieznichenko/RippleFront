@@ -12,8 +12,6 @@ const useLastDayData = () => {
     fetch("https://xrpkuwait.com/ledgerhistory")
       .then((response) => response.json())
       .then((data) => {
-        console.log("data.history", data.history);
-
         let modifyData =
           data?.history?.length > 0 &&
           data?.history?.map((item: any, index: number) => {

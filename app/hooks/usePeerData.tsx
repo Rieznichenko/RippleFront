@@ -109,7 +109,6 @@ const usePeerData = () => {
             ledgers: item?.ledgers || "N/A",
           };
         });
-        console.log("🚀 ~ .then ~ modifyData:", modifyData);
         setPeers(modifyData);
       })
       .catch((error) => {

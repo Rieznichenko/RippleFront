@@ -19,11 +19,11 @@ const Page = () => {
       {/* <img src={camelBg.src} className="absolute right-0 top-80 -z-0" /> */}
       <div className="text-center mx-auto w-[90%] sm:w-[80%]  ">
         <div className="pt-[10rem] ">
-          <div className=" flex items-center flex-col gap-5">
-            <h2 className="font-outfit text-6xl font-semibold text-white">
+          <div className=" flex items-start sm:items-center flex-col gap-5">
+            <h2 className="font-outfit text-3xl sm:text-6xl font-semibold text-white">
               Contact
             </h2>
-            <p className="font-lato  text-xl sm:text-2xl w-[100%] sm:w-[70%] text-white">
+            <p className="font-lato  text-left sm:text-center text-sm sm:text-2xl w-[100%] sm:w-[70%] text-white">
               We value your feedback and we are here to assist you. Please feel
               free to reach out about using any of the methods below. We look
               forward to hearing from you!
@@ -37,7 +37,7 @@ const Page = () => {
                   <span className="text-[#68A5FF]">
                     <Link
                       href={"mailto:33baid@gmail.com"}
-                      className="text-lg sm:text-xl"
+                      className="text-sm sm:text-xl"
                     >
                       33baid@gmail.com
                     </Link>
@@ -52,7 +52,7 @@ const Page = () => {
                   <span className="text-[#68A5FF]">
                     <Link
                       href={"https://twitter.com/33baid"}
-                      className="text-lg sm:text-xl"
+                      className="text-sm sm:text-xl"
                       target="_blank"
                     >
                       @33baid
