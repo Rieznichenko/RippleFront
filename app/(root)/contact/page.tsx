@@ -9,12 +9,13 @@ import Link from "next/link";
 const Page = () => {
   return (
     <div
-      className="flex justify-center"
+      className="flex justify-center h-dvh"
       style={{
         backgroundImage: `url(${camelBg.src})`,
         backgroundRepeat: "no-repeat",
         backgroundPositionX: "right",
         backgroundPositionY: "bottom",
+        backgroundSize: "40%",
       }}
     >
       {/* <img src={camelBg.src} className="absolute right-0 top-80 -z-0" /> */}

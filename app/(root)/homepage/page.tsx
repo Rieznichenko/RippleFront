@@ -123,7 +123,7 @@ export default function Home() {
             <h4 className="text-white font-thin md:mx-24 sm:my-0 mx-12 sm:text-[16px]  font-outfit md:text-[34px]">
               All the way
             </h4>
-            <h2 className="text-white md:mb-6 mb-3 sm:my-0 mt-2 font-semibold text-4xl sm:text-[20px]  text-[30px] md:text-[50px] font-outfit">
+            <h2 className="text-white md:mb-6 mb-3 sm:my-0 mt-2 font-semibold text-4xl  md:text-[50px] font-outfit">
               From a <span className="text-[#FF4040] ">52°</span> degree country
             </h2>
 
@@ -172,7 +172,7 @@ export default function Home() {
                       .deleteAll()
 
                       .typeString(
-                        `<div class="h-16 flex justify-center items-end mt-5 -ml-1 landscape:mt-3"><img class="landscape:h-3" src="${ok.src}" /></div>`
+                        `<div class="h-16 flex justify-center items-end sm:mt-7 -ml-1"><img class="h-16" src="${ok.src}" /></div>`
                       )
                       .pauseFor(4500)
                       // .deleteAll()
