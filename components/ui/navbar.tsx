@@ -9,7 +9,7 @@ const Navbar = () => {
   const pathName = usePathname();
 
   const isActive = (href: any) => {
-    let color = href === "/xrpkhub" ? "text-[#ff4040]" : "text-[#FEC637]";
+    let color = href === "/xrpkhub" ? "text-[#FEC637]" : "text-[#FEC637]";
     return pathName === href ? color : "";
   };
 

@@ -106,37 +106,33 @@ export default function Home() {
   return (
     <div>
       <div
-        className="bg-[#1b1b1b]  h-screen  overflow-hidden relative"
+        className="bg-[#000000bb] flex items-center justify-center h-screen bg-blend-soft-light  overflow-hidden relative bg-cover bg-no-repeat  md:bg-top bg-center bg-camel"
         style={{
           backgroundImage: `url(${camelBg.src})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPositionX: "center",
-          backgroundPositionY: "top",
-          backgroundSize: "auto 100%",
         }}
       >
-        <img
+        {/* <img
           src={camelBg.src}
           alt="camel"
           className="object-contain hidden md:block bg-blend-overlay absolute -top-40"
-        />
-        <div className="h-full absolute  z-10 w-[100%]  bg-black bg-opacity-80"></div>
+        /> */}
 
-        <div className="flex flex-col md:flex-row  absolute left-0 right-0 top-0 z-40 w-[90%]  md:h-full  items-center mx-auto">
-          <div className="mt-52 md:32 md:mt-0 flex-1 ">
-            <h4 className="text-white font-thin md:mx-24 mx-12  font-outfit text-[20px] md:text-[34px]">
+        {/* <div className="h-full absolute top-0  z-10 w-[100%]  bg-black  opacity-80"></div> */}
+        <div className="flex w-[90%] items-center justify-center sm:flex-row flex-col ">
+          <div className=" flex-1 ">
+            <h4 className="text-white font-thin md:mx-24 sm:my-0 mx-12 sm:text-[16px]  font-outfit md:text-[34px]">
               All the way
             </h4>
-            <h2 className="text-white md:mb-6 mb-3 mt-2 font-semibold text-4xl text-[30px] md:text-[50px] font-outfit">
+            <h2 className="text-white md:mb-6 mb-3 sm:my-0 mt-2 font-semibold text-4xl sm:text-[20px]  text-[30px] md:text-[50px] font-outfit">
               From a <span className="text-[#FF4040] ">52°</span> degree country
             </h2>
 
-            <h3 className="text-white font-thin  md:mt-5 my-1 text-center font-outfit  md:text-4xl text-[20px]">
+            <h3 className="text-white font-thin  md:mt-5 my-1 sm:my-0 text-center font-outfit sm:text-[16px]   md:text-4xl text-[20px]">
               To the <span className="text-[#5076F2] font-bold">XRP</span>{" "}
               Ledger
             </h3>
 
-            <h2 className="text-white text-left sm:flex gap-2 items-center  h-16 md:text-4xl sm:text-center md:text-left font-outfit text-[18px]">
+            <h2 className="text-white text-left sm:flex gap-2 items-center  sm:text-[16px]  h-16 md:text-4xl sm:text-center md:text-left font-outfit text-[18px]">
               XRPL is {changeText ? "FAST" : "a"}
               <span className="text-[#FEC637]  flex items-center capitalize ">
                 <Typewriter
@@ -176,10 +172,10 @@ export default function Home() {
                       .deleteAll()
 
                       .typeString(
-                        `<div class="h-16 mt-5 -ml-1"><img src="${ok.src}" style="width:50px; " } /></div>`
+                        `<div class="h-16 flex justify-center items-end mt-5 -ml-1 landscape:mt-3"><img class="landscape:h-3" src="${ok.src}" /></div>`
                       )
                       .pauseFor(4500)
-                      .deleteAll()
+                      // .deleteAll()
                       .callFunction(() => {
                         console.log("All strings were deleted");
                         setChangeText(false);
@@ -189,7 +185,7 @@ export default function Home() {
                   }}
                   options={{
                     autoStart: true,
-                    loop: true,
+                    loop: false,
                     cursor: "",
                     deleteSpeed: 20,
                     delay: 50,
@@ -229,7 +225,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="sm:flex-[0.7] flex-1 mt-20 md:mt-0 text-white home-widget">
+          <div className="sm:flex-[0.7] flex-1 mt-20 landscape:mt-0   text-white home-widget">
             {/* <div className="border rounded-2xl w-full md:w-[90%] float-end  bg-[#45484E]">
               <div className="flex gap-4 p-5 items-center">
                 <img src="./assets/xlogo.png" className="w-[60px] h-[60px]" />
