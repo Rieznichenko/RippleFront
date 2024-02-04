@@ -22,8 +22,6 @@ export default function RootLayout({
   const renderBG = () => {
     if (pathName === "/homepage") {
       return `none`;
-    } else if (pathName === "/servers") {
-      return `url(${serverBg.src})`;
     } else {
       return `url(${gradientBg.src})`;
       // Handle other paths or provide a default background

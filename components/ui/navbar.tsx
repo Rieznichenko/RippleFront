@@ -56,7 +56,7 @@ const Navbar = () => {
         >
           <ul className="justify-end items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {menus.map((item, idx) => (
-              <li key={idx} className={`text-white hover:text-[#FEC637]`}>
+              <li key={idx} className={`text-white hover:text-[#FEC637]`} onClick={()=>setState(!state  )}>
                 <Link className={`${isActive(item.path)}`} href={item.path}>
                   {item.title}
                 </Link>
