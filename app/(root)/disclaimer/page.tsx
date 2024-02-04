@@ -20,7 +20,7 @@ const Page = () => {
       <div className="text-left sm:text-center flex w-[80%] sm:w-[90%] z-10 relative mx-auto  ">
         <div className="pt-[10rem]  w-full ">
           <div className="my-12 w-full flex sm:items-center flex-col gap-5">
-            <h2 className="font-outfit text-3xl sm:text-6xl font-semibold text-white">
+            <h2 className="font-outfit text-3xl sm:text-6xl font-bold text-white">
               Disclaimer
             </h2>
 
