@@ -17,10 +17,6 @@ const Page = () => {
     //   backgroundPositionY: "top",
     // }}
     >
-      <img
-        src={camelBg.src}
-        className="absolute h-screen right-0 top-20 -z-0"
-      />
       <div className="text-left sm:text-center flex w-[80%] sm:w-[90%] z-10 relative mx-auto  ">
         <div className="pt-[10rem]  w-full ">
           <div className="my-12 w-full flex sm:items-center flex-col gap-5">
