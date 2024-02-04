@@ -27,7 +27,7 @@ const Page = () => {
             <div className="rounded-xl bg-[#45484E] border w-full sm:w-[80%] border-[#a1a2a5] py-5 px-5">
               <div>
                 <p className="text-left text-white font-bold my-6">Interpretation and Definitions</p>
-                <p className="text-left text-white">Definitions</p><br/>
+                <p className="text-left text-white font-bold">Definitions</p><br/>
                 <p className="text-left text-white">For the purposes of this Disclaimer:</p>
                 <div>
                   <li className="text-left text-white">Entity: (referred to as either &quot;the Entity&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Disclaimer) refers to XRP Kuwait, Kuwait City, Kuwait. Running and operated solely
