@@ -11,7 +11,7 @@ const Page = () => {
     <div
       className="flex justify-center h-dvh bg-center sm:bg-right bg-[length:80%_100%] sm:bg-[length:40%_100%]"
       style={{
-        backgroundImage: `url(${camelBg.src})`,
+        // backgroundImage: `url(${camelBg.src})`,
         backgroundRepeat: "no-repeat",
         backgroundPositionY: "center",
       }}

@@ -132,7 +132,7 @@ export default function Home() {
               Ledger
             </h3>
 
-            <h2 className="text-white text-left sm:flex gap-2 items-center  sm:text-[16px]  h-16 md:text-4xl sm:text-center md:text-left font-outfit text-[18px]">
+            {/* <h2 className="text-white text-left sm:flex gap-2 items-center  sm:text-[16px]  h-16 md:text-4xl sm:text-center md:text-left font-outfit text-[18px]">
               XRPL is {changeText ? "FAST" : "a"}
               <span className="text-[#FEC637]  flex items-center capitalize ">
                 <Typewriter
@@ -190,37 +190,7 @@ export default function Home() {
                   }}
                 />
               </span>
-              {/* <Typed
-                strings={[
-                  "community powered utility",
-                  "scalable and sustainable blockchain",
-                  "decentralized, public blockchain",
-                  "greener blockchain",
-                  "5",
-                  "4",
-                  "3",
-                  "2",
-                  "1",
-                  `<img src='${ok.src}'>`,
-                ]}
-                typeSpeed={60}
-                backSpeed={40}
-                className="Typewriter"
-                showCursor={false}
-                preStringTyped={(index:any, { strings, backSpeed }:any) => {
-                  const isNumber =
-                    !isNaN(parseFloat(strings[index])) &&
-                    isFinite(strings[index]);
-                  setChangeText(isNumber);
-
-                  const lastIndex = strings.length - 1;
-
-                  setIsPaused(lastIndex == index);
-                }}
-                onComplete={handleComplete}
-                stopped={isPaused}
-              /> */}
-            </h2>
+            </h2> */}
           </div>
 
           <div className="sm:flex-[0.7] flex-1 mt-20 landscape:mt-0   text-white home-widget">

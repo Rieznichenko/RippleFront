@@ -40,7 +40,7 @@ export default function NotFound() {
             <span className="font-lato text-[16px]">CAMELS CROSSING</span>
           </h2>
         </div>
-        <div className="rounded-2xl w-[50%] mx-auto bg-opacity-60 my-5 p-12 font-lato text-2xl text-white text-center bg-gradient-to-r from-opacity-30 to-opacity-5 bg-[#45484E] backdrop-blur-40">
+        <div className="rounded-2xl w-[100%] mx-auto bg-opacity-60 my-5 p-12 font-lato text-2xl text-white text-center bg-gradient-to-r from-opacity-30 to-opacity-5 bg-[#45484E] backdrop-blur-40 sm:w-[50%] ">
           The page you are looking for does not exist.
           <br />
           If you think this is a mistake, please contact us or click the home
