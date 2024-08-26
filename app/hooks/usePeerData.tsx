@@ -62,7 +62,7 @@ const usePeerData = () => {
         // Extract top 5 countries
         const topCountries = Object.entries(countryCount)
           .sort((a, b) => b[1] - a[1]) // Sort by count desc
-          .slice(0, 5);
+          .slice(0, 10);
 
         const sortedVersionGroup = Object.entries(versionGroup).sort(
           ([versionA], [versionB]) => versionA.localeCompare(versionB)
@@ -128,7 +128,7 @@ const usePeerData = () => {
         }
         console.log(topCountries);
         // Adding top 5 countries section
-        for (let i = 0; i < topCountries.length; i++) {
+        for (let i = 0; i < result.length; i++) {
           result[i]["type_2"] = (
             <ReactCountryFlag
               countryCode={topCountries[i][0]}

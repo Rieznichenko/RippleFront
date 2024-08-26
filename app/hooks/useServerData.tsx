@@ -3,6 +3,7 @@ import Lottie from "lottie-react"; // Import the Lottie component
 
 import offlineAnimationData from "@/components/lottie/wired-flat-64-wifi-offline.json";
 import onlineAnimationData from "@/components/lottie/wired-flat-64-wifi-online.json";
+import dotAnimationData from "@/components/lottie/system-solid-716-spinner-three-dots.json";
 import { usePathname } from "next/navigation";
 import socketIOClient from 'socket.io-client';
 
@@ -163,16 +164,23 @@ const useServerData = () => {
         });
         console.log(modifyData);
         modifyData.push({
-          node: `Total connected peers`,
+          node: ``,
           pubkey: '',
           ledger: '',
           uptime: '',
           proposers: '',
           quorum: '',
 
-          version: '',
+          version: 'Total peers',
           peers: totalPeers,
-          status: '',
+          status:  (
+            <Lottie
+              animationData={dotAnimationData}
+              loop={true}
+              autoplay={true}
+              style={{ width: 30, height: 30, margin: "0 auto" }}
+            />
+          ),
         })
     }
 

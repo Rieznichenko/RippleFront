@@ -33,7 +33,7 @@ const useLastDayData = () => {
           };
         });
 
-      setLedgers(modifyData.reverse());
+      if (modifyData) setLedgers(modifyData.reverse());
     });
 
     const intervalId = setInterval(() => {

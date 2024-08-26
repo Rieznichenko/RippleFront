@@ -99,12 +99,12 @@ export default function Home() {
   return (
     <div>
       <div
-        className="bg-[#000000bb] flex items-end justify-center h-screen bg-blend-soft-light  overflow-hidden relative bg-cover bg-no-repeat  md:bg-top bg-center bg-camel"
+        className="bg-[#000000bb] flex items-center justify-center h-screen bg-blend-soft-light  overflow-hidden relative bg-cover bg-no-repeat  md:bg-top bg-center bg-camel"
         style={{
           backgroundImage: `url(${camelBg.src})`,
         }}
       >
-        <div className="flex-col w-[90%]">
+        <div className="flex-col w-full px-2 sm:px-5 lg:px-32 max-w-[2000px] mx-auto">
           {/* <img
           src={camelBg.src}
           alt="camel"
@@ -112,8 +112,8 @@ export default function Home() {
         /> */}
 
           {/* <div className="h-full absolute top-0  z-10 w-[100%]  bg-black  opacity-80"></div> */}
-          <div className="flex w-[90%] items-center justify-center sm:flex-row flex-col pb-20">
-            <div className=" flex-1 ">
+          <div className="flex items-center justify-center sm:flex-row flex-col gap-2">
+            <div className="flex-1">
               <h4 className="text-white font-thin text-[20px] md:mx-24 sm:my-0 mx-12 sm:text-[16px]  font-outfit md:text-[34px] leading-[50px] sm:leading-[35px]">
                 All the way
               </h4>
@@ -126,110 +126,9 @@ export default function Home() {
                 To the <span className="text-[#5076F2] font-bold">XRP</span>{" "}
                 Ledger
               </h3>
-
-              {/* <h2 className="text-white text-left sm:flex gap-2 items-center  sm:text-[16px]  h-16 md:text-4xl sm:text-center md:text-left font-outfit text-[18px]">
-              XRPL is {changeText ? "FAST" : "a"}
-              <span className="text-[#FEC637]  flex items-center capitalize ">
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter
-                      .typeString("Decentralized, Public blockchain")
-                      .pauseFor(2500)
-                      .deleteAll()
-                      .typeString("community powered utility")
-                      .pauseFor(2500)
-                      .deleteAll()
-                      .typeString("scalable and sustainable blockchain")
-                      .pauseFor(2500)
-                      .deleteAll()
-                      .typeString("greener blockchain")
-                      .pauseFor(2500)
-                      .deleteAll()
-                      .callFunction(() => {
-                        setChangeText(true);
-                      })
-
-                      .typeString("5")
-                      .pauseFor(1000)
-                      .deleteAll()
-                      .typeString("4")
-                      .pauseFor(1000)
-                      .deleteAll()
-                      .typeString("3")
-                      .pauseFor(1000)
-                      .deleteAll()
-                      .typeString("2")
-                      .pauseFor(1000)
-                      .deleteAll()
-                      .typeString("1")
-                      .pauseFor(1000)
-                      .deleteAll()
-
-                      .typeString(
-                        `<div class="h-16 flex justify-center items-end sm:mt-7 -ml-1"><img class="h-16" src="${ok.src}" /></div>`
-                      )
-                      .pauseFor(4500)
-                      .deleteAll()
-                      .callFunction(() => {
-                        setChangeText(false);
-                      })
-
-                      .start();
-                  }}
-                  options={{
-                    autoStart: true,
-                    loop: true,
-                    cursor: "",
-                    deleteSpeed: 20,
-                    delay: 50,
-                  }}
-                />
-              </span>
-            </h2> */}
             </div>
 
-            <div className="sm:flex-[0.7] flex-1 mt-20 landscape:mt-0   text-white home-widget">
-              {/* <div className="border rounded-2xl w-full md:w-[90%] float-end  bg-[#45484E]">
-              <div className="flex gap-4 p-5 items-center">
-                <img src="./assets/xlogo.png" className="w-[60px] h-[60px]" />
-                <div className="text-[23px]">
-                  <h3 className="text-[#CDD004] font-outfit">XRP (XRP)</h3>
-                  <h3 className="text-white font-outfit">
-                    0.539491 USD
-                    <span className="text-[#FF4A00]">(-2.06%)</span>
-                  </h3>
-                </div>
-              </div>
-
-              <div className="flex font-lato border-y border-[#999DA3]">
-                <div className="flex-1 text-[18px]">
-                  <div className="text-white flex-1 py-4 text-center justify-center items-center">
-                    <h4 className="uppercase my-2 ">Rank</h4>
-                    <p>6</p>
-                  </div>
-                </div>
-
-                <div className="border-x flex-1  border-[#999DA3]">
-                  <div className="text-white text-[18px] flex-1 py-4 text-center justify-center items-center">
-                    <h4 className="uppercase my-2">MARKET CAP</h4>
-                    <p>$29.32 B USD</p>
-                  </div>
-                </div>
-                <div className=" flex-1">
-                  <div className="text-white text-[18px] py-4 text-center justify-center items-center">
-                    <h4 className="uppercase my-2">VOLUME</h4>
-                    <p>$618.13 M USD</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="py-4 text-center">
-                <p className="text-[#CDD004] text-[10px] underline">
-                  Powered by CoinMarketCap
-                </p>
-              </div>
-            </div> */}
-
+            <div className="flex flex-col gap-10 sm:gap-10 flex-1 landscape:mt-0 text-white home-widget">
               <div
                 className="coinmarketcap-currency-widget"
                 data-currencyid="52"
@@ -241,21 +140,12 @@ export default function Home() {
                 data-volume="true"
                 data-statsticker="true"
                 data-stats="USD"
-              ></div>
+              />
+              <div>
+              {/* <iframe src="https://feed.mikle.com/widget/v2/168790/?preloader-text=Loading&" height="250px" width="100%" className="fw-iframe" scrolling="no" frameborder="0"></iframe> */}
+              <a className="twitter-timeline" data-theme="dark" href="https://twitter.com/XRPKuwait?ref_src=twsrc%5Etfw">Tweets by XRPKuwait</a> <script async src="https://platform.twitter.com/widgets.js"></script>
+              </div>
             </div>
-          </div>
-          <div className="flex justify-end" style={{width:"100%", height:"400px"}}>
-            <a
-              className="twitter-timeline"
-              data-theme="dark"
-              href="https://twitter.com/XRPKuwait?ref_src=twsrc%5Etfw"
-            >
-              Tweets by XRPKuwait
-            </a>{" "}
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-            ></script>
           </div>
         </div>
       </div>
