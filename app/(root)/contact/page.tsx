@@ -37,7 +37,7 @@ const Page = () => {
                 title={
                   <span className="text-[#68A5FF]">
                     <Link
-                      href={"mailto:33baid@gmail.com"}
+                      href={"mailto:support@xrpkuwait.com"}
                       className="text-sm sm:text-xl"
                     >
                       support@xrpkuwait.com
@@ -52,7 +52,7 @@ const Page = () => {
                 title={
                   <span className="text-[#68A5FF]">
                     <Link
-                      href={"https://twitter.com/33baid"}
+                      href={"https://twitter.com/xrpkuwait"}
                       className="text-sm sm:text-xl"
                       target="_blank"
                     >

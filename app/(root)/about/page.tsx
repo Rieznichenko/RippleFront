@@ -24,11 +24,7 @@ const Page = () => {
               About
             </h2>
             <p className="font-lato  text-sm sm:text-2xl text-white">
-              XRP Kuwait is currently running 5 cluster rippled servers, running
-              on a validator / ledger history / public hubs / submission node
-              along side 150+ other validators / 700+ ledger history nodes. All
-              validators come to an agreement on orders and the outcome of XRP
-              transactions every 3 seconds.
+            XRP Kuwait is currently running 7 clustered rippled servers, including validator and ledger history, alongside 150+ other validators and 700+ ledger history nodes. Additionally, XRP Kuwait operates a pool of servers configured as public hubs, hosted at hubs.xrpkuwait.com. All validators come to an agreement on orders and the outcome of XRP transactions every 3 seconds.
             </p>
             {/* <p className="flex text-2xl text-center font-semibold justify-center text-white gap-2 items-center">
               Proudly inspired by

@@ -20,7 +20,7 @@ const Navbar = () => {
     { title: "Location", path: "/location" },
     { title: "About", path: "/about" },
     { title: "Contact", path: "/contact" },
-    { title: "XRPK Hubs", path: "/xrpkhub" },
+    { title: "XRPK Hubs", path: "/xrpkhubs" },
   ];
   return (
     <nav className=" w-full  md:border-0">

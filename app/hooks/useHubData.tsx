@@ -10,7 +10,7 @@ const useHubData = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://24.199.89.59:8001/api/v2/hubs");
+      const response = await fetch("https://xrpkuwait.com/api/v1/hubs");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -43,11 +43,6 @@ const useHubData = () => {
 
   useEffect(() => {
     getData();
-    const intervalId = setInterval(() => {
-      getData();
-    }, 2000);
-
-    return () => clearInterval(intervalId);
   }, []);
 
   return {

@@ -23,14 +23,14 @@ const useServerData = () => {
   );
   
   let initArray = [];
-  if(pathName === "/xrpkhub")
+  if(pathName === "/xrpkhubs")
     initArray = [1, 2];
   else
     initArray = [1, 2, 3 ,4, 5]
   
   const fakeObject = initArray.map((item: any, index: number) => {
     let obj =
-      pathName === "/xrpkhub"
+      pathName === "/xrpkhubs"
         ? {
             node: `XRPK HUB 0${index + 1}`,
             pubkey: "-",
@@ -95,7 +95,7 @@ const useServerData = () => {
             ? onlineAnimationData
             : offlineAnimationData;
           let obj =
-            pathName === "/xrpkhub"
+            pathName === "/xrpkhubs"
               ? {
                   node: `Node ${index + 1}`,
                   pubkey: item.pubkey,
@@ -199,7 +199,7 @@ const useServerData = () => {
 
     const intervalId = setInterval(() => {
       socket.emit(`${
-        pathName === "/xrpkhub" ? "/hubstate" : "/allstates"
+        pathName === "/xrpkhubs" ? "/hubstate" : "/allstates"
       }`)
     }, 1000); // 1000ms = 1 second
 

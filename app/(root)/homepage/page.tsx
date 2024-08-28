@@ -141,10 +141,8 @@ export default function Home() {
                 data-statsticker="true"
                 data-stats="USD"
               />
-              <div>
               {/* <iframe src="https://feed.mikle.com/widget/v2/168790/?preloader-text=Loading&" height="250px" width="100%" className="fw-iframe" scrolling="no" frameborder="0"></iframe> */}
-              <a className="twitter-timeline" data-theme="dark" href="https://twitter.com/XRPKuwait?ref_src=twsrc%5Etfw">Tweets by XRPKuwait</a> <script async src="https://platform.twitter.com/widgets.js"></script>
-              </div>
+              {/* <a className="twitter-timeline" data-theme="dark" href="https://twitter.com/XRPKuwait?ref_src=twsrc%5Etfw">Tweets by XRPKuwait</a> <script async src="https://platform.twitter.com/widgets.js"></script> */}
             </div>
           </div>
         </div>
@@ -160,7 +158,7 @@ export default function Home() {
                 style={{ width: 60, height: 60, margin: "0 auto" }}
               />
             }
-            title={"XRPK cluster status"}
+            title={"XRPK Cluster status"}
           />
           <div className="">
             <TableComponent data={servers} column={serverDataColumn} />
@@ -176,7 +174,7 @@ export default function Home() {
                   style={{ width: 60, height: 60, margin: "0 auto" }}
                 />
               }
-              title={"XRPL live statistics"}
+              title={"XRPL Live statistics"}
             />
 
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">

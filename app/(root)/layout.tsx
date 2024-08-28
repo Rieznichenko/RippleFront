@@ -21,7 +21,7 @@ export default function RootLayout({
 
   const renderBG = () => {
     console.log(pathName);
-    if (pathName === "/homepage" || pathName === "/xrpkhub" || pathName.startsWith("/ledgers") || pathName === "/disclaimer") {
+    if (pathName === "/homepage" || pathName === "/xrpkhubs" || pathName.startsWith("/ledgers") || pathName === "/disclaimer") {
       return `none`;
     } else {
       return `url(${gradientBg.src})`;

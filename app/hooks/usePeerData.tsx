@@ -9,6 +9,25 @@ import outboundState from "@/components/lottie/wired-outline-34-arrow-up.json";
 import socketIOClient from "socket.io-client";
 import { version } from "os";
 
+interface PeerInfo {
+  pubkey: string;
+  country: string;
+  version: string;
+  serverState: string;
+  direction: string;
+  latency: number;
+  ledgers: string;
+}
+
+interface ResultItem {
+  category_1: string | JSX.Element;
+  type_1: string | JSX.Element;
+  count_1: number | string;
+  category_2: string | JSX.Element;
+  type_2: string | JSX.Element;
+  count_2: number | string;
+}
+
 const usePeerData = () => {
   const column = useMemo(
     () => [
@@ -26,7 +45,7 @@ const usePeerData = () => {
   let fakeObject: any[] = [];
 
   const [peers, setPeers] = useState(fakeObject);
-  const [statistics, setStatistics] = useState([]);
+  const [statistics, setStatistics] = useState<ResultItem[]>([]);
 
   useEffect(() => {
     const socket = socketIOClient("https://xrpkuwait.com/api/v1");
@@ -34,13 +53,13 @@ const usePeerData = () => {
       if (data.status == 500) return;
       const extract_statistics = function () {
         // Group by version and status
-        const versionGroup = {};
-        const statusGroup = {};
-        const countryCount = {};
+        const versionGroup: { [key: string]: number } = {};
+        const statusGroup: { [key: string]: number } = {};
+        const countryCount: { [key: string]: number } = {};
 
-        data.peerInfo.forEach((item) => {
+        data.peerInfo.forEach((item: PeerInfo) => {
           // Count by version
-          const version = item.version.substring(0, 13); // or item.version.slice(0, 13)
+          const version = item.version.substring(0, 20);
           if (!versionGroup[version]) {
             versionGroup[version] = 0;
           }
@@ -58,17 +77,18 @@ const usePeerData = () => {
           }
           countryCount[item.country]++;
         });
-
+        statusGroup["unknown"] = statusGroup["unknown"] ? statusGroup["unknown"] : 0;
         // Extract top 5 countries
         const topCountries = Object.entries(countryCount)
           .sort((a, b) => b[1] - a[1]) // Sort by count desc
           .slice(0, 10);
 
-        const sortedVersionGroup = Object.entries(versionGroup).sort(
-          ([versionA], [versionB]) => versionA.localeCompare(versionB)
-        );
+        const sortedVersionGroup = Object.entries(versionGroup)
+          .sort((a, b) => b[1] - a[1]) // Sort by count desc
+          .slice(0, 6);
+
         // Prepare the result format
-        const result = [];
+        const result: ResultItem[] = [];
 
         // Add Ripple statistics data
         for (const [version, count] of sortedVersionGroup) {
@@ -83,9 +103,9 @@ const usePeerData = () => {
         }
 
         // Adding Ripple Type & Top Countries section
-        if(result){
-          result[0]["category_1"] = "Ripple Type";
-          result[0]["category_2"] = "Top Countries";
+        if (result) {
+          result[0]["category_1"] = (<b>Rippled version</b>);
+          result[0]["category_2"] = (<b>Top countries</b>);
         }
 
         // Adding Status statistics data
@@ -93,7 +113,7 @@ const usePeerData = () => {
         for (const [status, count] of Object.entries(statusGroup)) {
           let colors = {
             bg: "bg-[#32E685]",
-            text: "text-[#0D793F]",
+            text: "text-black",
             border: "border-[#0D793F]",
           };
 
@@ -111,7 +131,7 @@ const usePeerData = () => {
             };
           }
           result.push({
-            category_1: first_flag ? "Status" : "",
+            category_1: first_flag ? (<b>Server state</b>) : "",
             type_1: (
               <div
                 className={`${colors.bg} inline-block font-semibold ${colors.text} border ${colors.border} rounded-full px-5 py-2`}
@@ -129,15 +149,17 @@ const usePeerData = () => {
         console.log(topCountries);
         // Adding top 5 countries section
         for (let i = 0; i < result.length; i++) {
-          result[i]["type_2"] = (
-            <ReactCountryFlag
-              countryCode={topCountries[i][0]}
-              svg
-              title={topCountries[i][0]}
-              style={{ width: 30, height: 30 }}
-            />
-          );
-          result[i]["count_2"] = topCountries[i][1];
+          if (topCountries[i]) {
+            result[i]["type_2"] = (
+              <ReactCountryFlag
+                countryCode={topCountries[i][0]}
+                svg
+                title={topCountries[i][0]}
+                style={{ width: 30, height: 30 }}
+              />
+            );
+            result[i]["count_2"] = topCountries[i][1];
+          }
         }
 
         setStatistics(result); // Update state with the result
@@ -148,7 +170,7 @@ const usePeerData = () => {
       let modifyData = data.peerInfo?.map((item: any, index: any) => {
         let colors = {
           bg: "bg-[#32E685]",
-          text: "text-[#0D793F]",
+          text: "text-black",
           border: "border-[#0D793F]",
         };
 

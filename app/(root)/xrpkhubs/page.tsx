@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
-import React from "react";
+import { useEffect, useMemo, useState } from "react";
 import serverStateTitle from "@/components/lottie/wired-flat-952-business-network.json";
 
 import temperature from "@/components/svg/wired-flat-819-hot-temperature.gif";
@@ -14,6 +14,8 @@ import onlineAnimationData from "@/components/lottie/wired-flat-64-wifi-online.j
 import useServerData from "@/app/hooks/useServerData";
 import usePeerData from "@/app/hooks/usePeerData";
 import useHubData from "@/app/hooks/useHubData"; // Import the custom hook
+import "@/app/hubtable.css";
+
 const Page = () => {
   const { servers } = useServerData();
   const { peers, peersColumn, statistics } = usePeerData();
@@ -34,68 +36,19 @@ const Page = () => {
   const statistics_column = [
     "Category",
     "Details",
-    "Count",
+    "Peers",
     "Category",
     "Details",
-    "Count",
+    "Peers",
   ];
-  const hub_mockdata = [
-    {
-      ip: "37.34.188.207",
-      type: "A",
-      ttl: "600",
-    },
-    {
-      ip: "37.34.241.36",
-      type: "A",
-      ttl: "600",
-    },
-    {
-      ip: "70.69.204.25",
-      type: "A",
-      ttl: "600",
-    },
-    {
-      ip: "78.89.203.220",
-      type: "A",
-      ttl: "600",
-    },
-  ];
+  const convertHubData = (arr: any) => {
+    const placeholder = { address: '-', domain: '-', ttl: '-', type: '-' };
+    while (arr.length && arr.length < statistics.length) {
+      arr.push(placeholder);
+    }
+    return arr;
+  };
 
-  const statistics_mockdata = [
-    {
-      category_1: "Rippled Version",
-      details_1: "Ripple",
-      count_1: "30 Users",
-      category_2: "Peers From",
-      detail_2: "USA",
-      count_2: 22,
-    },
-    {
-      category: "",
-      details: "Ripple",
-      count: "30 Users",
-      type: "Peers From",
-      country: "USA",
-      peer_count: 22,
-    },
-    {
-      category: "",
-      details: "Ripple",
-      count: "30 Users",
-      type: "Peers From",
-      country: "USA",
-      peer_count: 22,
-    },
-    {
-      category: "",
-      details: "Ripple",
-      count: "30 Users",
-      type: "Peers From",
-      country: "USA",
-      peer_count: 22,
-    },
-  ];
   return (
     <div className="pt-[10rem] custom-height">
       <div className="text-center flex justify-center w-[90%] z-10 relative mx-auto ">
@@ -115,46 +68,28 @@ const Page = () => {
             <div className="">
               <TableComponent data={servers} column={column} />
             </div>
-            <div className="flex pt-5 md:flex-row flex-col">
+            <div className="flex pt-5 pb-5 md:flex-row flex-col">
               <div className="md:w-1/2 sm:w-full flex flex-col">
                 <IconHeading title={"XRPK Hubs"} />
-                <div className="p-8 rounded-3xl flex-grow flex flex-col">
-                  <div className="bg-black-300 text-white flex-grow flex flex-col">
-                    <div className="text-left">
-                      <b>XRPK HUBS</b>
-                      <br />
-                      <br />
-                      The XRPK pool of servers is hosted at
-                      &quot;hubs.xrpkuwat.com&quot;. These servers are
-                      clustered, running the latest version of Rippled software,
-                      and configured as Public Hubs.
-                      <br />
-                      <br />
-                      <center>
-                        <b>DNS REQUEST TIME:</b>&nbsp;&nbsp;
-                        <span style={{ color: "white" }}>{timestamp}</span>
-                      </center>
-                    </div>
-                    <div style={{ flex: 1, overflowY: "auto" }}>
-                      <TableComponent data={hubData} column={hubs_column} />
-                    </div>
+                <center className="text-white">
+                  <b>DNS REQUEST TIME:</b>&nbsp;&nbsp;
+                  <span className="text-[#68A5FF]">{timestamp}</span>
+                </center>
+                <div className="rounded-3xl flex-grow flex flex-col">
+                  <div className="flex-grow flex flex-col">
+                    <TableComponent data={convertHubData(hubData)} column={hubs_column} />
                   </div>
                 </div>
               </div>
               <div className="md:w-1/12 sm:w-0"></div>
               <div className="md:w-1/2 sm:w-full flex flex-col">
                 <IconHeading title={"XRPK Peer statistics"} />
-                <div className="p-8 rounded-3xl flex-grow flex flex-col">
-                  <div className="bg-black-300 text-white flex-grow flex flex-col">
-                    <div className="text-left">
-                      <b>XRPK Peer statistics</b>
-                    </div>
-                    <div style={{ flex: 1, overflowY: "auto" }}>
-                      <TableComponent
-                        data={statistics}
-                        column={statistics_column}
-                      />
-                    </div>
+                <div className="mt-6 rounded-3xl flex-grow flex flex-col">
+                  <div className="flex-grow flex flex-col">
+                    <TableComponent
+                      data={statistics}
+                      column={statistics_column}
+                    />
                   </div>
                 </div>
               </div>
