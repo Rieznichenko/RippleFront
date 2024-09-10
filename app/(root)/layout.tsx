@@ -30,7 +30,7 @@ export default function RootLayout({
   };
   return (
     <div
-      className="h-full 1xl:h-screen  bg-[#1B1B1B] bg-scroll"
+      className="h-full min-h-screen bg-[#1B1B1B] bg-scroll flex flex-col"
       style={{
         backgroundImage: renderBG(),
         backgroundRepeat: "no-repeat",

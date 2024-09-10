@@ -9,7 +9,7 @@ import Link from "next/link";
 const Page = () => {
   return (
     <div
-      className=""
+      className="flex-1"
       // style={{
       //   backgroundImage: `url(${gradientBg.src})`,
       //   backgroundRepeat: "no-repeat",

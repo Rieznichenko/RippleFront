@@ -63,7 +63,7 @@ const convertTime = function (time: any) {
     const offsetMinutes = (Math.abs(timeZoneOffset) % 60).toString().padStart(2, '0');
 
     // Construct the formatted date string
-    const formattedDate = `${dayName} ${monthName} ${day} ${hours}:${minutes}: ${sign}${offsetHours}${offsetMinutes} ${year}`;
+    const formattedDate = `${dayName} ${monthName} ${day} ${hours}:${minutes}:${seconds} ${sign}${offsetHours} ${year}`;
 
     return formattedDate;
   }

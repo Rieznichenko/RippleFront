@@ -3,7 +3,7 @@ import server from "@/components/svg/wired-lineal-58-servers.gif";
 const Page = () => {
   return (
     <div
-      className=" h-full 1xl:h-screen "
+      className="h-full flex-1"
     >
       <div className="text-left sm:text-center flex justify-center w-[90%] z-10 relative mx-auto ">
         <div className="pt-[10rem] ">
