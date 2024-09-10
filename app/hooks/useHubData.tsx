@@ -1,3 +1,4 @@
+import { time } from "console";
 import { useEffect, useMemo, useState } from "react";
 
 const useHubData = () => {
@@ -32,7 +33,7 @@ const useHubData = () => {
       const sortedData = transformedData.sort((a: any, b: any) => a.address.localeCompare(b.address));
 
       setHubData(sortedData);
-      setTimestamp(data.ret.when);
+      setTimestamp(convertTime(data.ret.when));
       setLoading(false);
     } catch (error) {
       console.error("Error fetching hub data:", error);
@@ -40,6 +41,34 @@ const useHubData = () => {
       setLoading(false);
     }
   };
+const convertTime = function (time: any) {
+  if (time) {
+    // Parse the server time string into a Date object
+    const date = new Date(time);
+
+    // Convert the date to the user's local time zone
+    const localDate = new Date(date.toLocaleString('en-US', { timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone }));
+
+    // Extract components of the date
+    const dayName = localDate.toLocaleString('en-US', { weekday: 'short' });
+    const monthName = localDate.toLocaleString('en-US', { month: 'short' });
+    const day = localDate.getDate();
+    const year = localDate.getFullYear();
+    const hours = localDate.getHours().toString().padStart(2, '0');
+    const minutes = localDate.getMinutes().toString().padStart(2, '0');
+    const seconds = localDate.getSeconds().toString().padStart(2, '0');
+    const timeZoneOffset = -localDate.getTimezoneOffset();
+    const sign = timeZoneOffset >= 0 ? '+' : '-';
+    const offsetHours = Math.abs(Math.floor(timeZoneOffset / 60)).toString().padStart(2, '0');
+    const offsetMinutes = (Math.abs(timeZoneOffset) % 60).toString().padStart(2, '0');
+
+    // Construct the formatted date string
+    const formattedDate = `${dayName} ${monthName} ${day} ${hours}:${minutes}: ${sign}${offsetHours}${offsetMinutes} ${year}`;
+
+    return formattedDate;
+  }
+  return null;
+}
 
   useEffect(() => {
     getData();
